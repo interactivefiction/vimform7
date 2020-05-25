@@ -53,6 +53,67 @@ Removal Process
 
 You can remove Vimform7 from your system by running the vimform7-uninstall.sh script.  This script can be found in two places: 1) The root of the original archive that Vimform7 was installed from, 2) In the ~/.vimform7/Vimform7 folder on the system where Vimform7 was installed.
 
+Using Vimform
+=============
+
+Desktop Launcher
+----------------
+
+The desktop launcher provided by Vimform7 simply opens the last project opened by the user.  Immediately after installation, using the desktop launcher will result in opening a simple test IF project.  To change the project opened by the desktop launcher use the vimform7-open-prj.sh script to open a different project from the commandline.  After doing this, the next time you use the desktop launcher the new project will be open by default.
+
+.. image:: imgs/vimform7desktop.png
+   :alt: Vimform7 desktop launcher used to open most recent project.
+
+Command Line Tools
+------------------
+
+Vimform7 provides several command line tools that are used to manage and create Inform7 projects.  When working with existing Inform7 projects the vimform7-port-prj.sh script is helpful in auto-generating a new custom makefile for your project so it may be built using Vimform7 from within Vim or simply by calling make from the commandline in the projects <PROJECTNAME>.inform folder from the commandline.  When working on new projects the vimform7-create-prj.sh is helpful in creating a brand new <PROJECTNAME>.inform7 directory, uuid, and makefile.  Opening an existing project is accomplished by using vimform7-open-prj.sh.
+
+.. list-table:: Vimform7 Command Line Tools
+   :widths: 25 50 25
+   :header-rows: 1
+
+   * - Vimform7 Script
+     - Purpose
+     - Common Usage
+   * - vimform7-create-prj.sh
+     - Create a new Inform7 project.
+     - -n="<NAME>"
+   * - vimform7-make-distro.sh
+     - Make a new Vimform7 distribution.
+     - -n="<NAME>"
+   * - vimform7-open-prj.sh
+     - Open an existing Inform7 project.
+     - -f="./<PROJECTFOLDER>/"
+   * - vimform7-port-prj.sh
+     - Convert an existing Inform7 project.
+     - -f="./<PROJECTFOLDER>/"
+
+Editing Tools
+-------------
+
+Vimform7 provides tools that are integrated into the Vim environment via Vim plugins.  These tools are envoked using various key combinations.  The following table lists all Vimform7 key combinations that can be used while editing an IF work from within Vim.
+
+.. list-table:: Vimform7 Vim Key Combinations
+   :widths: 25 75
+   :header-rows: 1
+
+   * - Vim Key Combination
+     - Purpose
+   * - -7h
+     - Open a vertical pane with Inform7 help docs. 
+   * - -7p
+     - Open a horizontal pane to play your latest IF build.
+   * - -m
+     - Compile your IF work in a new full sized window.
+   * - -d
+     - Compile your IF work in a new horizontal pane.
+   * - -l
+     - List all errors in your IF work and jump to error in source.
+   * - -t
+     - Compile and then test your IF work in a new full sized window.
+
+
 Customization
 =============
 

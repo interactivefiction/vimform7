@@ -91,6 +91,12 @@
 <li><a class="reference internal" href="#removal-process">Removal Process</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#using-vimform">Using Vimform</a><ul>
+<li><a class="reference internal" href="#desktop-launcher">Desktop Launcher</a></li>
+<li><a class="reference internal" href="#command-line-tools">Command Line Tools</a></li>
+<li><a class="reference internal" href="#editing-tools">Editing Tools</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#customization">Customization</a><ul>
 <li><a class="reference internal" href="#file-structure">File Structure</a></li>
 <li><a class="reference internal" href="#making-a-distribution">Making A Distribution</a></li>
@@ -205,6 +211,86 @@
 <div class="section" id="removal-process">
 <h2>Removal Process</h2>
 <p>You can remove Vimform7 from your system by running the vimform7-uninstall.sh script.  This script can be found in two places: 1) The root of the original archive that Vimform7 was installed from, 2) In the ~/.vimform7/Vimform7 folder on the system where Vimform7 was installed.</p>
+</div>
+</div>
+<div class="section" id="using-vimform">
+<h1>Using Vimform</h1>
+<div class="section" id="desktop-launcher">
+<h2>Desktop Launcher</h2>
+<p>The desktop launcher provided by Vimform7 simply opens the last project opened by the user.  Immediately after installation, using the desktop launcher will result in opening a simple test IF project.  To change the project opened by the desktop launcher use the vimform7-open-prj.sh script to open a different project from the commandline.  After doing this, the next time you use the desktop launcher the new project will be open by default.</p>
+<img alt="Vimform7 desktop launcher used to open most recent project." src="_images/vimform7desktop.png" />
+</div>
+<div class="section" id="command-line-tools">
+<h2>Command Line Tools</h2>
+<p>Vimform7 provides several command line tools that are used to manage and create Inform7 projects.  When working with existing Inform7 projects the vimform7-port-prj.sh script is helpful in auto-generating a new custom makefile for your project so it may be built using Vimform7 from within Vim or simply by calling make from the commandline in the projects &lt;PROJECTNAME&gt;.inform folder from the commandline.  When working on new projects the vimform7-create-prj.sh is helpful in creating a brand new &lt;PROJECTNAME&gt;.inform7 directory, uuid, and makefile.  Opening an existing project is accomplished by using vimform7-open-prj.sh.</p>
+<table border="1" class="colwidths-given docutils" id="id1">
+<caption><span class="caption-text">Vimform7 Command Line Tools</span></caption>
+<colgroup>
+<col width="25%" />
+<col width="50%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Vimform7 Script</th>
+<th class="head">Purpose</th>
+<th class="head">Common Usage</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>vimform7-create-prj.sh</td>
+<td>Create a new Inform7 project.</td>
+<td>-n=”&lt;NAME&gt;”</td>
+</tr>
+<tr class="row-odd"><td>vimform7-make-distro.sh</td>
+<td>Make a new Vimform7 distribution.</td>
+<td>-n=”&lt;NAME&gt;”</td>
+</tr>
+<tr class="row-even"><td>vimform7-open-prj.sh</td>
+<td>Open an existing Inform7 project.</td>
+<td>-f=”./&lt;PROJECTFOLDER&gt;/”</td>
+</tr>
+<tr class="row-odd"><td>vimform7-port-prj.sh</td>
+<td>Convert an existing Inform7 project.</td>
+<td>-f=”./&lt;PROJECTFOLDER&gt;/”</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="editing-tools">
+<h2>Editing Tools</h2>
+<p>Vimform7 provides tools that are integrated into the Vim environment via Vim plugins.  These tools are envoked using various key combinations.  The following table lists all Vimform7 key combinations that can be used while editing an IF work from within Vim.</p>
+<table border="1" class="colwidths-given docutils" id="id2">
+<caption><span class="caption-text">Vimform7 Vim Key Combinations</span></caption>
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Vim Key Combination</th>
+<th class="head">Purpose</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>-7h</td>
+<td>Open a vertical pane with Inform7 help docs.</td>
+</tr>
+<tr class="row-odd"><td>-7p</td>
+<td>Open a horizontal pane to play your latest IF build.</td>
+</tr>
+<tr class="row-even"><td>-m</td>
+<td>Compile your IF work in a new full sized window.</td>
+</tr>
+<tr class="row-odd"><td>-d</td>
+<td>Compile your IF work in a new horizontal pane.</td>
+</tr>
+<tr class="row-even"><td>-l</td>
+<td>List all errors in your IF work and jump to error in source.</td>
+</tr>
+<tr class="row-odd"><td>-t</td>
+<td>Compile and then test your IF work in a new full sized window.</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="section" id="customization">
