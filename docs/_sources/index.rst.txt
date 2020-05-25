@@ -59,7 +59,7 @@ Using Vimform
 Desktop Launcher
 ----------------
 
-The desktop launcher provided by Vimform7 simply opens the last project opened by the user.  Immediately after installation, using the desktop launcher will result in opening a simple test IF project.  To change the project opened by the desktop launcher use the vimform7-open-prj.sh script to open a different project from the commandline.  After doing this, the next time you use the desktop launcher the new project will be open by default.
+The desktop launcher provided by Vimform7 simply opens the last project opened by the user.  Immediately after installation, using the desktop launcher will result in opening a simple test IF project.  To change the project opened by the desktop launcher use the vimform7-open-prj.sh script to open a different project from the commandline.  After doing this, the next time you use the desktop launcher the new project will be open by default.  On gnome a gnome desktop the launcher can be found by pressing the super key and then typing vimform7 in the find window.
 
 .. image:: imgs/vimform7desktop.png
    :alt: Vimform7 desktop launcher used to open most recent project.
