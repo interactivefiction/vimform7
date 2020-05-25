@@ -84,6 +84,8 @@ pygments_style = 'sphinx'
 html_theme = 'sphinx_rtd_theme'
 html_favicon = 'vimform7.ico'
 html_logo = 'vimform7128x128.png'
+html_show_sourcelink = False
+html_add_permalinks = ""
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the

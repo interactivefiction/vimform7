@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to Vimform7’s documentation! &mdash; Vimform7 1.0 documentation</title>
+  <title>Vimform7 Introduction &mdash; Vimform7 1.0 documentation</title>
   
 
   
@@ -83,7 +83,25 @@
             
               <!-- Local TOC -->
               <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to Vimform7’s documentation!</a></li>
+<li><a class="reference internal" href="#">Vimform7 Introduction</a></li>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#installation-removal">Installation &amp; Removal</a><ul>
+<li><a class="reference internal" href="#downloading-an-archive">Downloading An Archive</a></li>
+<li><a class="reference internal" href="#installation-process">Installation Process</a></li>
+<li><a class="reference internal" href="#removal-process">Removal Process</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customization">Customization</a><ul>
+<li><a class="reference internal" href="#file-structure">File Structure</a></li>
+<li><a class="reference internal" href="#making-a-distribution">Making A Distribution</a></li>
+<li><a class="reference internal" href="#how-to-edit-vimform7-vim-plugins">How To Edit Vimform7 Vim Plugins</a></li>
+<li><a class="reference internal" href="#how-to-edit-vimform7-scripts">How To Edit Vimform7 Scripts</a></li>
+<li><a class="reference internal" href="#example-of-adding-a-music-player-to-vimform7">Example Of Adding A Music Player To Vimform7</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#working-with-source">Working With Source</a></li>
+<li><a class="reference internal" href="#download">Download</a></li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 </div>
@@ -130,14 +148,12 @@
     
       <li><a href="#">Docs</a> &raquo;</li>
         
-      <li>Welcome to Vimform7’s documentation!</li>
+      <li>Vimform7 Introduction</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -149,13 +165,85 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-vimform7-s-documentation">
-<h1>Welcome to Vimform7’s documentation!<a class="headerlink" href="#welcome-to-vimform7-s-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
+  <div class="toctree-wrapper compound">
 </div>
+<div class="section" id="vimform7-introduction">
+<h1>Vimform7 Introduction</h1>
+<p>Vimform7 is an open source terminal based <em>Linux</em> development environment for Inform7 projects.  It provides all core functions required to author interactive fiction works in the Inform7 language.  As its name implies, Vimform7 makes use of the Vim editor to provide its functionality.  Vim itself is a highly configurable text editor built to enable efficient text editing.  It has a small memory footprint and excels at handling very large text files.  Vimform7 makes use of Vim configurability by adding a plugin that enables users to develop Inform7 projects.  In order to allow viewing of HTML help documents from within Vim, Vimform7 uses the Lynx text mode browser.  When compiling Inform7 projects Vimform uses standard make utilities in conjunction with Inform7 CBlorb, inform6 and ni compilers.</p>
+<img alt="Vimform7 environment with help documentation and code editor open." src="_images/vimform7intro.png" />
+</div>
+<div class="section" id="features">
+<h1>Features</h1>
+<p>Vimform7 provides the essential capabilities needed to author an interactive fiction work.  With Vimform7 you can:</p>
+<ul class="simple">
+<li>Compile your Inform7 source code.</li>
+<li>Debug your Inform7 code and jump directly to error in the source.</li>
+<li>Work with existing Inform7 projects.</li>
+<li>Test your Inform7 projects (text only projects at this time).</li>
+<li>Read the Inform7 help documentation.</li>
+<li>Customize the look and feel of the editor.</li>
+<li>Add your own custom short cuts and commands to aid in your development efforts.</li>
+<li>Package your customizations as a new Vimform7 distribution to give to others or to replicate your custom environment on a new system.</li>
+</ul>
+</div>
+<div class="section" id="installation-removal">
+<h1>Installation &amp; Removal</h1>
+<p>Vimform7 distributions are provided as compressed archives available on the Vimform7 github builds page.  Installation requires the archive to be decompressed to a temporary location and then an installation script is run to perform the necessary setup steps.  Similar to installation, uninstallation is performed by executing a script as well. Some key aspects of the Vimform7 installation are as follows:</p>
+<ul class="simple">
+<li>Vimform7 will not conflict with existing gnome-inform7 or other IF compilers that are installed on your system.  For example, gnome-inform7 and Vimform7 can coexist on the same system with no issues.</li>
+<li>Vimform7 will install OS packages for vim, lynx, make, and uuidgen.  If your OS does not provide these packages Vimform7 will not install.</li>
+<li>Vimform7 itself is built entirely on shell scripts and vim scripting languages.  All scripts / plugins are installed within your home folder structure.</li>
+</ul>
+<div class="section" id="downloading-an-archive">
+<h2>Downloading An Archive</h2>
+<p>All official Vimform7 archives are available at the vimform7-builds github.  You can either clone the git repository or simply download a snapshot of the repository in zip format.</p>
+</div>
+<div class="section" id="installation-process">
+<h2>Installation Process</h2>
+<p>Vimform7 takes a few steps to install.  First you need to download an archive, second the archive must be extracted, and third a script must be run to perform the installation.</p>
+</div>
+<div class="section" id="removal-process">
+<h2>Removal Process</h2>
+<p>You can remove Vimform7 from your system by running the vimform7-uninstall.sh script.  This script can be found in two places: 1) The root of the original archive that Vimform7 was installed from, 2) In the ~/.vimform7/Vimform7 folder on the system where Vimform7 was installed.</p>
+</div>
+</div>
+<div class="section" id="customization">
+<h1>Customization</h1>
+<p>Vimform7 is meant to be customized.  Users can feel free to modify the various scripts that make up the Vimform7 tool set as well as the plugins that integrate Vimform7 with Vim.  Your customizations can also be packaged into a new Vimform7 distribution that can be used to share your work or to simply reproduce your configuration in a new computing environment.  If your customizations could be useful to others, the Vimform7 project welcomes contributions to the toolset via the github pull request workflow.</p>
+<div class="section" id="file-structure">
+<h2>File Structure</h2>
+</div>
+<div class="section" id="making-a-distribution">
+<h2>Making A Distribution</h2>
+</div>
+<div class="section" id="how-to-edit-vimform7-vim-plugins">
+<h2>How To Edit Vimform7 Vim Plugins</h2>
+</div>
+<div class="section" id="how-to-edit-vimform7-scripts">
+<h2>How To Edit Vimform7 Scripts</h2>
+</div>
+<div class="section" id="example-of-adding-a-music-player-to-vimform7">
+<h2>Example Of Adding A Music Player To Vimform7</h2>
+</div>
+</div>
+<div class="section" id="working-with-source">
+<h1>Working With Source</h1>
+</div>
+<div class="section" id="download">
+<h1>Download</h1>
+</div>
+<div class="section" id="resources">
+<h1>Resources</h1>
+<ul class="simple">
+<li><a class="reference external" href="http://inform7.com/">Inform7 - A Design System For Interactive Fiction</a></li>
+<li><a class="reference external" href="https://www.vim.org/">Vim - A Highly Configurable Text Editor</a></li>
+<li><a class="reference external" href="https://lynx.browser.org/">Lynx - A Text Browser For The World Wide Web</a></li>
+<li><a class="reference external" href="https://www.gnu.org/software/make/">GNU Make - A Tool That Generates Executables</a></li>
+<li><a class="reference external" href="https://www.gnu.org/software/bash/">GNU Bash - The sh-compatible Bourne Again SHell</a></li>
+</ul>
 </div>
 <div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<h1>Indices and tables</h1>
 <ul class="simple">
 <li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
 <li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
