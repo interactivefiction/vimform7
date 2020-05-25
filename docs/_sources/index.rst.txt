@@ -61,6 +61,11 @@ Vimform7 is meant to be customized.  Users can feel free to modify the various s
 File Structure
 --------------
 
+All files installed by Vimform7 are located in the users home directory.  A map that summarizes the locations of key files that may be of interest to users is given below.  Files and folders in ~/.vim are related to the Vimform7 Vim plugin implementation.  Files and folders in ~/.local are related to the integration of Vimform7 with your OS desktop and terminal.  Files and folders in ~/.vimform7 are related to the operation of Inform7 and are derived from `gnome-inform7 <https://github.com/ptomato/gnome-inform7>`_ with the exception of the Vimform7 folder which contains files related to creating new custom distributions of Vimform7 by users and some configuration files as well.
+ 
+.. image:: imgs/vimform7treelarge.png
+   :alt: Vimform7 key folders under users home directory after installation.
+
 Making A Distribution
 ---------------------
 
@@ -83,6 +88,7 @@ Resources
 ====================
 
 * `Inform7 - A Design System For Interactive Fiction <http://inform7.com/>`_
+* `gnome-inform7 - An Interactive Fiction IDE for Inform7 <https://github.com/ptomato/gnome-inform7>`_
 * `Vim - A Highly Configurable Text Editor <https://www.vim.org/>`_
 * `Lynx - A Text Browser For The World Wide Web <https://lynx.browser.org/>`_
 * `GNU Make - A Tool That Generates Executables <https://www.gnu.org/software/make/>`_
