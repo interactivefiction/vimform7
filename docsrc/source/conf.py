@@ -20,8 +20,8 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = u'Vimform7'
-copyright = u'2020, interactivefiction@gmail.com'
-author = u'interactivefiction@gmail.com'
+copyright = u'2020, vimform7@gmail.com'
+author = u'vimform7@gmail.com'
 
 # The short X.Y version
 version = u''
@@ -140,7 +140,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'Vimform7.tex', u'Vimform7 Documentation',
-     u'interactivefiction@gmail.com', 'manual'),
+     u'vimform7@gmail.com', 'manual'),
 ]
 
 
