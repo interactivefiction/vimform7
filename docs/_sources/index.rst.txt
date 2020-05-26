@@ -10,9 +10,6 @@
 Overview
 ####################################
 
-Vimform7 Introduction
-====================================
-
 Vimform7 is an open source terminal based *Linux* development environment for Inform7 projects.  It provides all core functions required to author interactive fiction works in the Inform7 language.  As its name implies, Vimform7 makes use of the Vim editor to provide its functionality.  Vim itself is a highly configurable text editor built to enable efficient text editing.  It has a small memory footprint and excels at handling very large text files.  Vimform7 makes use of Vim configurability by adding a plugin that enables users to develop Inform7 projects.  In order to allow viewing of HTML help documents from within Vim, Vimform7 uses the Lynx text mode browser.  When compiling Inform7 projects Vimform uses standard make utilities in conjunction with Inform7 CBlorb, inform6 and ni compilers.
 
 .. image:: imgs/vimform7intro.png
@@ -124,9 +121,6 @@ Vimform7 provides tools that are integrated into the Vim environment via Vim plu
 Customization
 ####################################
 
-Customization
-=============
-
 Vimform7 is meant to be customized.  Users can feel free to modify the various scripts that make up the Vimform7 tool set as well as the plugins that integrate Vimform7 with Vim.  Your customizations can also be packaged into a new Vimform7 distribution that can be used to share your work or to simply reproduce your configuration in a new computing environment.  If your customizations could be useful to others, the Vimform7 project welcomes contributions to the toolset via the github pull request workflow.
 
 File Structure
@@ -140,14 +134,54 @@ All files installed by Vimform7 are located in the users home directory.  A map 
 Making A Distribution
 =====================
 
+A new vimform distribution can be quickly created using the vimform7-make-distro.sh script.  Running the script without any parameters will automatically name the vimform distribution using the time and date.  The new distribution contains all changes made to an exiting installations vim plugins, shell scripts, and entire contents of the ~/.vimform folder.
+
 How To Modify Vimform
 =====================
+
+Modifying Vimform involves editing the various scripts that are part of the Vimform installation.  For example to customize the Vimform7 commandline tools one would edit the various vimform7-*.sh scripts in the ~/.local/bin folder.  Alternatively, editing the Vimform7 Vim plugins would involve modifying the inform*.vim files present in the subdirectories of the ~/.vim folder.  In general some trial and error will be required as changes are tested and further modifications are implemented under the desired behavior is achieved.  It is always a good idea to keep the original scripts as a backup and/or the original installation archive handy in the event a Vimform7 script becomes broken.  Vimform7 can be installed on top of itself and will overwrite existing files during installation on a system that already has Vimform7 installed.
 
 How To Edit Vimform7 Vim Plugins
 ================================
 
+To get started with editing the Vimform7 Vim plugins, if you are not familiar with Vim customization, you should take a look at the section `Tuning Vim <https://vimhelp.org/usr_toc.txt.html#usr_toc.txt>`_ in the Vim Reference Manual.  `Making New Commands <https://vimhelp.org/usr_40.txt.html#usr_40.txt>`_ describes how to add new command key sequences to Vim.  Vimform7 is provided with a number of custom commands to allow for the compilation and debug of Inform7 works.  `Your Own Syntax Highlighted <https://vimhelp.org/usr_44.txt.html#usr_44.txt>`_ describes how to implement your own custom syntax highlighter for any language you like (including Inform7).  Vimform7 is provided with a basic syntax highlighter as an example of how to get started.
+
+.. list-table:: Vimform7 Vim Plugin Files
+   :widths: 25 75
+   :header-rows: 1
+
+   * - Vim Plugin FIle
+     - Purpose
+   * - ~/.vim/syntax/inform7.vim
+     - Implements the Vimform7 Inform7 Vim syntax highlighter. 
+   * - ~/.vim/autoload/inform.vim
+     - Implements all Vimform7 Vim commands.
+   * - ~/.vim/ftdetect/inform7.vim
+     - Implements file type detection for Vimform7.
+
 How To Edit Vimform7 Scripts
 ============================
+
+To get started with editing the Vimform7 command line scripts, if you are not familiar with shell scripting, you should take a look at the `Bash Reference Manual <https://www.gnu.org/software/bash/manual/bash.html>`_.  This manual details all commands and concepts used to author the Vimform7 shell scripts.  Vimform7 provides a number of shell scripts that are located in ~/.local/bin and ~/.vimform7/Vimform7.  Those scripts located in ~/.vimform7/Vimform7 are generally only used for installation, uninstallation, and as templates during the process of creating a new distribution.  The scripts located in ~/.local/bin are those scripts that will be most commonly used on a regular basis when interacting with Vimform7.  To make modifications to a script simply open it up in your favorite editor, implement your changes, and the test them by using the script from the command line as you would normally.
+
+.. list-table:: Vimform7 Script Files
+   :widths: 50 50
+   :header-rows: 1
+
+   * - Vimform7 Script
+     - Purpose
+   * - ~/.local/bin/vimform7-create-prj.sh
+     - Create a new Inform7 project with autogenerated makefile.
+   * - ~/.local/bin/vimform7-make-distro.sh
+     - Make a new Vimform7 distribution from existing installation.
+   * - ~/.local/bin/vimform7-open-prj.sh
+     - Open an existing Inform7 project inside Vim
+   * - ~/.local/bin/vimform7-port-prj.sh
+     - Convert an existing Inform7 project to work with Vimform7.
+   * - ~/.local/bin/vimform7-common.sh
+     - Contains some common functions used by all scripts.
+   * - ~/.local/bin/vimform7-compile-filter.sh
+     - Compiler output filter to enable jump to error in Vim.
 
 Working Examples
 ================
@@ -159,17 +193,37 @@ Example Of Adding A Music Player To Vimform7
 Source Code
 ####################################
 
-Working With Source
-===================
+The source code for Vimform7 is not very different from the scripts that are part of a Vimform7 installation.  The major difference between the source repository and an installation are the directories that the various Vimform7 elements reside in.  This is because Vimform7 is not a compiled program.  It only relies on shell scripts and Vim extenstions (written in a Vim scripting language) to provide its functionality.  While it is possible to create a distribution from the source tree it is more common to build a distribution from a modified installation.  Building a distribution from a modified installation is usually prefer because it allows for realtime editing / modification of all Vimform7 scripts and rapid packaging of those changes for distribution.
 
 Obtaining Source
 ================
 
+Vimform7 is an open source project and all code for it may be obtained from the `Vimform7 Github Repository <https://github.com/interactivefiction/vimform7>`_.  The repository may be cloned or a zip file can be downloaded directory.  
+
+Working With Source
+===================
+
+The main reason to work with Vimform7 source code directly is to facillitate a git pull request.  If you have created enhancements to Vimform7 that you feel are useful to all Vimform7 users perform the following steps to populate the source tree with your changes.
+
+* Start by implementing all of your desired modifications in an existing Vimform7 installation.
+* Test all of your changes on your local installation to be sure everything works as expected.
+* Run vimform7-make-distro.sh to package your changes.
+* Move the resulting zip file to a temporary directory and extract it to gain access to the contents.
+* Copy vimform7-core.tar.xz, vimform7-libs.tar.xz, and vimform7-vimplugins.tar.xz into your git clone of the Vimform7 repository.
+* Delete the corresponding vimform7-core, vimform7-libs, and vimform7-vimplugins folders that are currently in the git repository.
+* Extract the contents of vimform7-core.tar.xz, vimform7-libs.tar.xz, and vimform7-vimplugins.tar.xz into the git repository.
+* Delete vimform7-core.tar.xz, vimform7-libs.tar.xz, and vimform7-vimplugins.tar.xz from the repository.
+* Now you are ready to check in your code to your fork of the Vimform7 repository and to make a git pull request.
+
 Distribution From Source
 ========================
 
+To make a distribution archive from source you can use the vimform7-make-distro-from-source.sh script that is available in the root of the source repository.  This script works the same as vimform7-make-distro.sh; however, it will create the distribution using the contents of the source directory rather than the installed components of Vimform7.  This script can be helpful when testing out your own controbutions to Vimform7.  To verify that you have included all the modifications in the Vimform7 source tree needed for your customizations, simply try making a distribution from the source and then test the installation to make sure everything works as you expect.  If this test passes you are ready to make a git pull request.
+
 Contributing
 ============
+
+Anyone can contribute to Vimform7.  Any source code, script, or modification to Vimform7 will be made open source.  To get started visit the `Vimform7 Github Repository <https://github.com/interactivefiction/vimform7>`_. 
 
 Forking Vimform
 ===============
