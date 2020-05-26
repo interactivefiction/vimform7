@@ -36,7 +36,8 @@ release = u'1.0'
 # needs_sphinx = '1.0'
 html_theme_options = {
     # Toc options
-    'collapse_navigation': True,
+    'collapse_navigation': False,
+    'navigation_depth': 3,
 }
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -88,8 +89,8 @@ pygments_style = 'sphinx'
 html_theme = 'sphinx_rtd_theme'
 html_favicon = 'vimform7.ico'
 html_logo = 'vimform7128x128.png'
-#html_show_sourcelink = False
-html_show_sourcelink = True
+html_show_sourcelink = False
+#html_show_sourcelink = True
 html_add_permalinks = ""
 
 # Theme options are theme-specific and customize the look and feel of a theme

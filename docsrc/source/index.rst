@@ -4,8 +4,11 @@
    contain the root `toctree` directive.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 3
+
+####################################
+Overview
+####################################
 
 Vimform7 Introduction
 ====================================
@@ -29,6 +32,10 @@ Vimform7 provides the essential capabilities needed to author an interactive fic
 * Add your own custom short cuts and commands to aid in your development efforts.
 * Package your customizations as a new Vimform7 distribution to give to others or to replicate your custom environment on a new system.
 
+####################################
+Usage
+####################################
+
 Installation & Removal
 ======================
 
@@ -39,17 +46,17 @@ Vimform7 distributions are provided as compressed archives available on the Vimf
 * Vimform7 itself is built entirely on shell scripts and vim scripting languages.  All scripts / plugins are installed within your home folder structure.
 
 Downloading An Archive
-----------------------
+======================
 
 All official Vimform7 archives are available at the vimform7-builds github.  You can either clone the git repository or simply download a snapshot of the repository in zip format.
 
 Installation Process
---------------------
+====================
 
 Vimform7 takes a few steps to install.  First you need to download an archive, second the archive must be extracted, and third a script must be run to perform the installation.
 
 Removal Process
----------------
+===============
 
 You can remove Vimform7 from your system by running the vimform7-uninstall.sh script.  This script can be found in two places: 1) The root of the original archive that Vimform7 was installed from, 2) In the ~/.vimform7/Vimform7 folder on the system where Vimform7 was installed.
 
@@ -57,7 +64,7 @@ Using Vimform
 =============
 
 Desktop Launcher
-----------------
+================
 
 The desktop launcher provided by Vimform7 simply opens the last project opened by the user.  Immediately after installation, using the desktop launcher will result in opening a simple test IF project.  To change the project opened by the desktop launcher use the vimform7-open-prj.sh script to open a different project from the commandline.  After doing this, the next time you use the desktop launcher the new project will be open by default.  On gnome a gnome desktop the launcher can be found by pressing the super key and then typing vimform7 in the find window.
 
@@ -65,7 +72,7 @@ The desktop launcher provided by Vimform7 simply opens the last project opened b
    :alt: Vimform7 desktop launcher used to open most recent project.
 
 Command Line Tools
-------------------
+==================
 
 Vimform7 provides several command line tools that are used to manage and create Inform7 projects.  When working with existing Inform7 projects the vimform7-port-prj.sh script is helpful in auto-generating a new custom makefile for your project so it may be built using Vimform7 from within Vim or simply by calling make from the commandline in the projects <PROJECTNAME>.inform folder from the commandline.  When working on new projects the vimform7-create-prj.sh is helpful in creating a brand new <PROJECTNAME>.inform7 directory, uuid, and makefile.  Opening an existing project is accomplished by using vimform7-open-prj.sh.
 
@@ -90,7 +97,7 @@ Vimform7 provides several command line tools that are used to manage and create 
      - -f="./<PROJECTFOLDER>/"
 
 Editing Tools
--------------
+=============
 
 Vimform7 provides tools that are integrated into the Vim environment via Vim plugins.  These tools are envoked using various key combinations.  The following table lists all Vimform7 key combinations that can be used while editing an IF work from within Vim.
 
@@ -113,6 +120,9 @@ Vimform7 provides tools that are integrated into the Vim environment via Vim plu
    * - -t
      - Compile and then test your IF work in a new full sized window.
 
+####################################
+Customization
+####################################
 
 Customization
 =============
@@ -120,7 +130,7 @@ Customization
 Vimform7 is meant to be customized.  Users can feel free to modify the various scripts that make up the Vimform7 tool set as well as the plugins that integrate Vimform7 with Vim.  Your customizations can also be packaged into a new Vimform7 distribution that can be used to share your work or to simply reproduce your configuration in a new computing environment.  If your customizations could be useful to others, the Vimform7 project welcomes contributions to the toolset via the github pull request workflow.
 
 File Structure
---------------
+==============
 
 All files installed by Vimform7 are located in the users home directory.  A map that summarizes the locations of key files that may be of interest to users is given below.  Files and folders in ~/.vim are related to the Vimform7 Vim plugin implementation.  Files and folders in ~/.local are related to the integration of Vimform7 with your OS desktop and terminal.  Files and folders in ~/.vimform7 are related to the operation of Inform7 and are derived from `gnome-inform7 <https://github.com/ptomato/gnome-inform7>`_ with the exception of the Vimform7 folder which contains files related to creating new custom distributions of Vimform7 by users and some configuration files as well.
  
@@ -128,22 +138,54 @@ All files installed by Vimform7 are located in the users home directory.  A map 
    :alt: Vimform7 key folders under users home directory after installation.
 
 Making A Distribution
----------------------
+=====================
+
+How To Modify Vimform
+=====================
 
 How To Edit Vimform7 Vim Plugins
---------------------------------
+================================
 
 How To Edit Vimform7 Scripts
-----------------------------
+============================
+
+Working Examples
+================
 
 Example Of Adding A Music Player To Vimform7
---------------------------------------------
+============================================
+
+####################################
+Source Code
+####################################
 
 Working With Source
 ===================
 
+Obtaining Source
+================
+
+Distribution From Source
+========================
+
+Contributing
+============
+
+Forking Vimform
+===============
+
+Issuing A Pull Request
+======================
+
+####################################
+Resources
+####################################
+
 Download
 ========
+
+Licensing
+=========
 
 Resources
 ====================

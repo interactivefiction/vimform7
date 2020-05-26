@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Vimform7 Introduction &mdash; Vimform7 1.0 documentation</title>
+  <title>Overview &mdash; Vimform7 1.0 documentation</title>
   
 
   
@@ -83,32 +83,49 @@
             
               <!-- Local TOC -->
               <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Vimform7 Introduction</a></li>
+<li><a class="reference internal" href="#">Overview</a><ul>
+<li><a class="reference internal" href="#vimform7-introduction">Vimform7 Introduction</a></li>
 <li><a class="reference internal" href="#features">Features</a></li>
-<li><a class="reference internal" href="#installation-removal">Installation &amp; Removal</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#usage">Usage</a><ul>
+<li><a class="reference internal" href="#installation-removal">Installation &amp; Removal</a></li>
 <li><a class="reference internal" href="#downloading-an-archive">Downloading An Archive</a></li>
 <li><a class="reference internal" href="#installation-process">Installation Process</a></li>
 <li><a class="reference internal" href="#removal-process">Removal Process</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#using-vimform">Using Vimform</a><ul>
+<li><a class="reference internal" href="#using-vimform">Using Vimform</a></li>
 <li><a class="reference internal" href="#desktop-launcher">Desktop Launcher</a></li>
 <li><a class="reference internal" href="#command-line-tools">Command Line Tools</a></li>
 <li><a class="reference internal" href="#editing-tools">Editing Tools</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#customization">Customization</a><ul>
+<li><a class="reference internal" href="#id1">Customization</a></li>
 <li><a class="reference internal" href="#file-structure">File Structure</a></li>
 <li><a class="reference internal" href="#making-a-distribution">Making A Distribution</a></li>
+<li><a class="reference internal" href="#how-to-modify-vimform">How To Modify Vimform</a></li>
 <li><a class="reference internal" href="#how-to-edit-vimform7-vim-plugins">How To Edit Vimform7 Vim Plugins</a></li>
 <li><a class="reference internal" href="#how-to-edit-vimform7-scripts">How To Edit Vimform7 Scripts</a></li>
+<li><a class="reference internal" href="#working-examples">Working Examples</a></li>
 <li><a class="reference internal" href="#example-of-adding-a-music-player-to-vimform7">Example Of Adding A Music Player To Vimform7</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#source-code">Source Code</a><ul>
 <li><a class="reference internal" href="#working-with-source">Working With Source</a></li>
+<li><a class="reference internal" href="#obtaining-source">Obtaining Source</a></li>
+<li><a class="reference internal" href="#distribution-from-source">Distribution From Source</a></li>
+<li><a class="reference internal" href="#contributing">Contributing</a></li>
+<li><a class="reference internal" href="#forking-vimform">Forking Vimform</a></li>
+<li><a class="reference internal" href="#issuing-a-pull-request">Issuing A Pull Request</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#resources">Resources</a><ul>
 <li><a class="reference internal" href="#download">Download</a></li>
-<li><a class="reference internal" href="#resources">Resources</a></li>
+<li><a class="reference internal" href="#licensing">Licensing</a></li>
+<li><a class="reference internal" href="#id2">Resources</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
 </ul>
 </div>
             
@@ -154,14 +171,12 @@
     
       <li><a href="#">Docs</a> &raquo;</li>
         
-      <li>Vimform7 Introduction</li>
+      <li>Overview</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -175,13 +190,15 @@
             
   <div class="toctree-wrapper compound">
 </div>
+<div class="section" id="overview">
+<h1>Overview</h1>
 <div class="section" id="vimform7-introduction">
-<h1>Vimform7 Introduction</h1>
+<h2>Vimform7 Introduction</h2>
 <p>Vimform7 is an open source terminal based <em>Linux</em> development environment for Inform7 projects.  It provides all core functions required to author interactive fiction works in the Inform7 language.  As its name implies, Vimform7 makes use of the Vim editor to provide its functionality.  Vim itself is a highly configurable text editor built to enable efficient text editing.  It has a small memory footprint and excels at handling very large text files.  Vimform7 makes use of Vim configurability by adding a plugin that enables users to develop Inform7 projects.  In order to allow viewing of HTML help documents from within Vim, Vimform7 uses the Lynx text mode browser.  When compiling Inform7 projects Vimform uses standard make utilities in conjunction with Inform7 CBlorb, inform6 and ni compilers.</p>
 <img alt="Vimform7 environment with help documentation and code editor open." src="_images/vimform7intro.png" />
 </div>
 <div class="section" id="features">
-<h1>Features</h1>
+<h2>Features</h2>
 <p>Vimform7 provides the essential capabilities needed to author an interactive fiction work.  With Vimform7 you can:</p>
 <ul class="simple">
 <li>Compile your Inform7 source code.</li>
@@ -194,14 +211,18 @@
 <li>Package your customizations as a new Vimform7 distribution to give to others or to replicate your custom environment on a new system.</li>
 </ul>
 </div>
+</div>
+<div class="section" id="usage">
+<h1>Usage</h1>
 <div class="section" id="installation-removal">
-<h1>Installation &amp; Removal</h1>
+<h2>Installation &amp; Removal</h2>
 <p>Vimform7 distributions are provided as compressed archives available on the Vimform7 github builds page.  Installation requires the archive to be decompressed to a temporary location and then an installation script is run to perform the necessary setup steps.  Similar to installation, uninstallation is performed by executing a script as well. Some key aspects of the Vimform7 installation are as follows:</p>
 <ul class="simple">
 <li>Vimform7 will not conflict with existing gnome-inform7 or other IF compilers that are installed on your system.  For example, gnome-inform7 and Vimform7 can coexist on the same system with no issues.</li>
 <li>Vimform7 will install OS packages for vim, lynx, make, and uuidgen.  If your OS does not provide these packages Vimform7 will not install.</li>
 <li>Vimform7 itself is built entirely on shell scripts and vim scripting languages.  All scripts / plugins are installed within your home folder structure.</li>
 </ul>
+</div>
 <div class="section" id="downloading-an-archive">
 <h2>Downloading An Archive</h2>
 <p>All official Vimform7 archives are available at the vimform7-builds github.  You can either clone the git repository or simply download a snapshot of the repository in zip format.</p>
@@ -214,9 +235,9 @@
 <h2>Removal Process</h2>
 <p>You can remove Vimform7 from your system by running the vimform7-uninstall.sh script.  This script can be found in two places: 1) The root of the original archive that Vimform7 was installed from, 2) In the ~/.vimform7/Vimform7 folder on the system where Vimform7 was installed.</p>
 </div>
-</div>
 <div class="section" id="using-vimform">
-<h1>Using Vimform</h1>
+<h2>Using Vimform</h2>
+</div>
 <div class="section" id="desktop-launcher">
 <h2>Desktop Launcher</h2>
 <p>The desktop launcher provided by Vimform7 simply opens the last project opened by the user.  Immediately after installation, using the desktop launcher will result in opening a simple test IF project.  To change the project opened by the desktop launcher use the vimform7-open-prj.sh script to open a different project from the commandline.  After doing this, the next time you use the desktop launcher the new project will be open by default.  On gnome a gnome desktop the launcher can be found by pressing the super key and then typing vimform7 in the find window.</p>
@@ -225,7 +246,7 @@
 <div class="section" id="command-line-tools">
 <h2>Command Line Tools</h2>
 <p>Vimform7 provides several command line tools that are used to manage and create Inform7 projects.  When working with existing Inform7 projects the vimform7-port-prj.sh script is helpful in auto-generating a new custom makefile for your project so it may be built using Vimform7 from within Vim or simply by calling make from the commandline in the projects &lt;PROJECTNAME&gt;.inform folder from the commandline.  When working on new projects the vimform7-create-prj.sh is helpful in creating a brand new &lt;PROJECTNAME&gt;.inform7 directory, uuid, and makefile.  Opening an existing project is accomplished by using vimform7-open-prj.sh.</p>
-<table border="1" class="colwidths-given docutils" id="id1">
+<table border="1" class="colwidths-given docutils" id="id3">
 <caption><span class="caption-text">Vimform7 Command Line Tools</span></caption>
 <colgroup>
 <col width="25%" />
@@ -261,7 +282,7 @@
 <div class="section" id="editing-tools">
 <h2>Editing Tools</h2>
 <p>Vimform7 provides tools that are integrated into the Vim environment via Vim plugins.  These tools are envoked using various key combinations.  The following table lists all Vimform7 key combinations that can be used while editing an IF work from within Vim.</p>
-<table border="1" class="colwidths-given docutils" id="id2">
+<table border="1" class="colwidths-given docutils" id="id4">
 <caption><span class="caption-text">Vimform7 Vim Key Combinations</span></caption>
 <colgroup>
 <col width="25%" />
@@ -297,7 +318,10 @@
 </div>
 <div class="section" id="customization">
 <h1>Customization</h1>
+<div class="section" id="id1">
+<h2>Customization</h2>
 <p>Vimform7 is meant to be customized.  Users can feel free to modify the various scripts that make up the Vimform7 tool set as well as the plugins that integrate Vimform7 with Vim.  Your customizations can also be packaged into a new Vimform7 distribution that can be used to share your work or to simply reproduce your configuration in a new computing environment.  If your customizations could be useful to others, the Vimform7 project welcomes contributions to the toolset via the github pull request workflow.</p>
+</div>
 <div class="section" id="file-structure">
 <h2>File Structure</h2>
 <p>All files installed by Vimform7 are located in the users home directory.  A map that summarizes the locations of key files that may be of interest to users is given below.  Files and folders in ~/.vim are related to the Vimform7 Vim plugin implementation.  Files and folders in ~/.local are related to the integration of Vimform7 with your OS desktop and terminal.  Files and folders in ~/.vimform7 are related to the operation of Inform7 and are derived from <a class="reference external" href="https://github.com/ptomato/gnome-inform7">gnome-inform7</a> with the exception of the Vimform7 folder which contains files related to creating new custom distributions of Vimform7 by users and some configuration files as well.</p>
@@ -306,24 +330,53 @@
 <div class="section" id="making-a-distribution">
 <h2>Making A Distribution</h2>
 </div>
+<div class="section" id="how-to-modify-vimform">
+<h2>How To Modify Vimform</h2>
+</div>
 <div class="section" id="how-to-edit-vimform7-vim-plugins">
 <h2>How To Edit Vimform7 Vim Plugins</h2>
 </div>
 <div class="section" id="how-to-edit-vimform7-scripts">
 <h2>How To Edit Vimform7 Scripts</h2>
 </div>
+<div class="section" id="working-examples">
+<h2>Working Examples</h2>
+</div>
 <div class="section" id="example-of-adding-a-music-player-to-vimform7">
 <h2>Example Of Adding A Music Player To Vimform7</h2>
 </div>
 </div>
+<div class="section" id="source-code">
+<h1>Source Code</h1>
 <div class="section" id="working-with-source">
-<h1>Working With Source</h1>
+<h2>Working With Source</h2>
 </div>
-<div class="section" id="download">
-<h1>Download</h1>
+<div class="section" id="obtaining-source">
+<h2>Obtaining Source</h2>
+</div>
+<div class="section" id="distribution-from-source">
+<h2>Distribution From Source</h2>
+</div>
+<div class="section" id="contributing">
+<h2>Contributing</h2>
+</div>
+<div class="section" id="forking-vimform">
+<h2>Forking Vimform</h2>
+</div>
+<div class="section" id="issuing-a-pull-request">
+<h2>Issuing A Pull Request</h2>
+</div>
 </div>
 <div class="section" id="resources">
 <h1>Resources</h1>
+<div class="section" id="download">
+<h2>Download</h2>
+</div>
+<div class="section" id="licensing">
+<h2>Licensing</h2>
+</div>
+<div class="section" id="id2">
+<h2>Resources</h2>
 <ul class="simple">
 <li><a class="reference external" href="http://inform7.com/">Inform7 - A Design System For Interactive Fiction</a></li>
 <li><a class="reference external" href="https://github.com/ptomato/gnome-inform7">gnome-inform7 - An Interactive Fiction IDE for Inform7</a></li>
@@ -334,12 +387,13 @@
 </ul>
 </div>
 <div class="section" id="indices-and-tables">
-<h1>Indices and tables</h1>
+<h2>Indices and tables</h2>
 <ul class="simple">
 <li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
 <li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
 <li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
 </ul>
+</div>
 </div>
 
 
