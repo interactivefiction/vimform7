@@ -375,6 +375,14 @@ Vim Commands
 
 **Envoking the -d command**
 
+.. image:: imgs/vimform7-d.png
+   :alt: Vimform7 with persisent compile output pane.
+
+**Envoking the -7h and then -7p command**
+
+.. image:: imgs/vimform7-7h-7p.png
+   :alt: Vimform7 with help and player panes open.
+
 ####################################
 Resources
 ####################################
