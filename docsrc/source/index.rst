@@ -332,11 +332,7 @@ For minor changes this level of testing would really not be needed, so remember,
 Resources
 ####################################
 
-Download
-========
-
-Licensing
-=========
+The following section provides a number of links and information about Vimform7, Inform7 itself, and the technologies Vimform7 uses.
 
 Resources
 ====================
@@ -348,9 +344,19 @@ Resources
 * `GNU Make - A Tool That Generates Executables <https://www.gnu.org/software/make/>`_
 * `GNU Bash - The sh-compatible Bourne Again SHell <https://www.gnu.org/software/bash/>`_
 
-Indices and tables
-==================
+Licensing
+=========
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+All scripts **unique** to Vimform7 are provided under the `MIT license <https://opensource.org/licenses/MIT>`_ provided in text form below.  This includes ~/.local/bin/vimform7* files, ~/.local/share/applications/vimform7.desktop, ~/.local/share/icons/vimform7.png, ~/.vim/autoload/inform.vim, ~/.vim/ftdetect/inform7.vim, ~/.vim/syntax/inform7.vim, and files within ~/.vimform7/Vimform7 that are provided as part of an official Vimform7 archive.  
+
+All other files within ~/.vimform7 outside of ~/.vimform7/Vimform7 are provided under the licenses detailed inside the ~/.vimform7/Documentation/licenses folder on your local installation.
+
+**Vimform7 License**
+
+Copyright 2020 vimform7@gmail.com
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
