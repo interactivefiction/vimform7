@@ -10,7 +10,7 @@
 Overview
 ####################################
 
-Vimform7 is an open source terminal based *Linux* development environment for Inform7 projects.  It provides all core functions required to author interactive fiction works in the Inform7 language.  As its name implies, Vimform7 makes use of the Vim editor to provide its functionality.  Vim itself is a highly configurable text editor built to enable efficient text editing.  It has a small memory footprint and excels at handling very large text files.  Vimform7 makes use of Vim configurability by adding a plugin that enables users to develop Inform7 projects.  In order to allow viewing of HTML help documents from within Vim, Vimform7 uses the Lynx text mode browser.  When compiling Inform7 projects Vimform uses standard make utilities in conjunction with Inform7 CBlorb, inform6 and ni compilers.
+Vimform7 is an open source terminal based *Linux* development environment for Inform7 projects.  It provides all core functions required to author interactive fiction works in the Inform7 language.  As its name implies, Vimform7 makes use of the **Vim 8.x** editor to provide its functionality.  Vim itself is a highly configurable text editor built to enable efficient text editing.  It has a small memory footprint and excels at handling very large text files.  Vimform7 makes use of Vim configurability by adding a plugin that enables users to develop Inform7 projects.  In order to allow viewing of HTML help documents from within Vim, Vimform7 uses the Lynx text mode browser.  When compiling Inform7 projects Vimform uses standard make utilities in conjunction with Inform7 CBlorb, inform6 and ni compilers.
 
 .. image:: imgs/vimform7intro.png
    :alt: Vimform7 environment with help documentation and code editor open.
@@ -32,6 +32,8 @@ Vimform7 provides the essential capabilities needed to author an interactive fic
 ####################################
 Usage
 ####################################
+
+Vimform7 has a limited desktop launcher that opens the last project you edited.  This is convienent when you are working on a larger more long term project and prefer to not have to open the console in order to launch Vimform7.  For all other operations, Vimform7 is used from the command line directly. The sections below provide more details on how to obtain Vimform7, how to install / uninstall it, and these two modes work.
 
 Installation & Removal
 ======================
@@ -56,9 +58,6 @@ Removal Process
 ===============
 
 You can remove Vimform7 from your system by running the vimform7-uninstall.sh script.  This script can be found in two places: 1) The root of the original archive that Vimform7 was installed from, 2) In the ~/.vimform7/Vimform7 folder on the system where Vimform7 was installed.
-
-Using Vimform
-=============
 
 Desktop Launcher
 ================
@@ -139,12 +138,14 @@ A new vimform distribution can be quickly created using the vimform7-make-distro
 How To Modify Vimform
 =====================
 
-Modifying Vimform involves editing the various scripts that are part of the Vimform installation.  For example to customize the Vimform7 commandline tools one would edit the various vimform7-*.sh scripts in the ~/.local/bin folder.  Alternatively, editing the Vimform7 Vim plugins would involve modifying the inform*.vim files present in the subdirectories of the ~/.vim folder.  In general some trial and error will be required as changes are tested and further modifications are implemented under the desired behavior is achieved.  It is always a good idea to keep the original scripts as a backup and/or the original installation archive handy in the event a Vimform7 script becomes broken.  Vimform7 can be installed on top of itself and will overwrite existing files during installation on a system that already has Vimform7 installed.
+Modifying Vimform involves editing the various scripts that are part of the Vimform installation.  For example to customize the Vimform7 commandline tools one would edit the various vimform7* scripts in the ~/.local/bin folder.  Alternatively, editing the Vimform7 Vim plugins would involve modifying the inform* files present in the subdirectories of the ~/.vim folder.  In general some trial and error will be required as changes are tested and further modifications are implemented until the desired behavior is achieved.  It is always a good idea to keep the original scripts as a backup and/or the original installation archive handy in the event a Vimform7 script becomes broken.  One way to make a quick backup of your current installation is to run the vimform7-make-distro.sh script.  Vimform7 can be installed on top of itself and will overwrite existing files during installation on a system that already has Vimform7 installed.
 
 How To Edit Vimform7 Vim Plugins
 ================================
 
 To get started with editing the Vimform7 Vim plugins, if you are not familiar with Vim customization, you should take a look at the section `Tuning Vim <https://vimhelp.org/usr_toc.txt.html#usr_toc.txt>`_ in the Vim Reference Manual.  `Making New Commands <https://vimhelp.org/usr_40.txt.html#usr_40.txt>`_ describes how to add new command key sequences to Vim.  Vimform7 is provided with a number of custom commands to allow for the compilation and debug of Inform7 works.  `Your Own Syntax Highlighted <https://vimhelp.org/usr_44.txt.html#usr_44.txt>`_ describes how to implement your own custom syntax highlighter for any language you like (including Inform7).  Vimform7 is provided with a basic syntax highlighter as an example of how to get started.
+
+.. _vimform-plugin-files:
 
 .. list-table:: Vimform7 Vim Plugin Files
    :widths: 25 75
@@ -164,6 +165,8 @@ How To Edit Vimform7 Scripts
 
 To get started with editing the Vimform7 command line scripts, if you are not familiar with shell scripting, you should take a look at the `Bash Reference Manual <https://www.gnu.org/software/bash/manual/bash.html>`_.  This manual details all commands and concepts used to author the Vimform7 shell scripts.  Vimform7 provides a number of shell scripts that are located in ~/.local/bin and ~/.vimform7/Vimform7.  Those scripts located in ~/.vimform7/Vimform7 are generally only used for installation, uninstallation, and as templates during the process of creating a new distribution.  The scripts located in ~/.local/bin are those scripts that will be most commonly used on a regular basis when interacting with Vimform7.  To make modifications to a script simply open it up in your favorite editor, implement your changes, and the test them by using the script from the command line as you would normally.
 
+.. _vimform-script-files:
+
 .. list-table:: Vimform7 Script Files
    :widths: 50 50
    :header-rows: 1
@@ -181,13 +184,96 @@ To get started with editing the Vimform7 command line scripts, if you are not fa
    * - ~/.local/bin/vimform7-common.sh
      - Contains some common functions used by all scripts.
    * - ~/.local/bin/vimform7-compile-filter.sh
-     - Compiler output filter to enable jump to error in Vim.
-
-Working Examples
-================
+     - Compiler output filter to enable jump to error in Vim. 
 
 Example Of Adding A Music Player To Vimform7
 ============================================
+
+These following working example is a step-by-step tutorial that provides an introduction to editing the Vimform7 Vim plugins and the Vimform command line scripts. By the end of the example you will have added a new key command to use within Vim that activates a console based music player and will have added that dependency to the vimform installation script.  It is always good to do a bit of planning before starting your work.  Here are some things to consider before you start adding a feature to Vimform7.
+
+* What specifically am I trying to add to Vimform7?  Is it a new vim command?  Is it a change to the command line scripts?  Perhaps both?  What specifically is the change intended to do?
+* What vim plugin files will I need to change (if any) to accomplish my goal?
+* What command line scripts will I need to change (if any) to accomplish my goal?
+* What changes should I make to each file I have identified?
+* Are my changes specific to my computing environment or are the general and perhaps useful to all Vimform7 users?
+* How will I test my changes that I have made?
+
+Lets start by making a small list that includes our goal, files we plan to edit, and why those particular files should be edited.  This list will serve as a basic roadmap for our work.  Hopefully, the same overall approach can be reused to implement other features you may need to add to Vimform7 as well.  You may find it helpful to refer to :ref:`vimform-script-files` and :ref:`vimform-plugin-files` to determine what files may be important to modify as part of your work.
+
+.. list-table:: Plan To Add CMUS to Vimform7
+   :widths: 25 50 25
+   :header-rows: 1
+
+   * - Task
+     - Description
+     - Test Plan
+   * - Define feature.
+     - Integrate CMUS with Vimform7.
+     - Command -a will open CMUS in vim.
+   * - Scripts Affected.
+     - vimform7-install.sh CMUS dependecy.
+     - Check for CMUS package.
+   * - Plugins Affected
+     - ~/.vim/autoload/inform.vim -a code.
+     - Run Vimform7 to try -a.
+   * - Validation
+     - Try new install of Vimform7.
+     - Use vimform7-make-distro.sh.
+
+Before we get started on each task, it might be helpful to get your system navigated to the various directories where Vimform7 is installed.  You can either open up individual file browsers to each folder or get a few terminals open to the various folders.  The folders you will need are ~/.vim, ~/.vimform7/Vimform7, and ~/.local/bin.
+
+**Define Feature** - To get started lets state exactly what we are trying to do.  The goal here is to integrate the CMUS console base music player with Vim via a command added to the Vimform7 plugins and scripts.  If you are not familiar with CMUS you might want to check out the `CMUS Github <https://cmus.github.io/>`_.  To envoke the CMUS player users will issue the **-a** command while inside of the Vim editor.  With all of this stated we have a clear picture of what we are trying to accomplish.
+
+**Scripts Affected** - Since we are adding the CMUS music player to Vimform7 we need to address the fact that this is a new external dependency for Vimform7.  To add this new dependency to Vimform7 installer we need to be sure the changes are made to the Vimform7 installer.  The installer can be found at ~/.vimform7/Vimform7/vimform7-install.sh.  The changes required are not very complicated.  Inside the script goto the section of the code where it checks for system dependencies.  An exerpt of this section is provided below for your reference.  In the exerpt below, refer to lines 14,15 and 27,28.  These are the lines you will need to add to your vimform7-install.sh script to ensure that the dependency is handled properly when the installer is run on a new operating system.
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 14, 15, 27, 28
+
+	echo " - Checking for system dependencies."
+	echo ""
+	if [ ! -f $DEBDISTRO ]; then
+		echo " - RPM Based distribution detected."
+		echo ""
+		testpkg="vim-enhanced"
+		check_rpm_dep $testpkg
+		testpkg="lynx"
+		check_rpm_dep $testpkg
+		testpkg="make"
+		check_rpm_dep $testpkg
+		testpkg="util-linux"
+		check_rpm_dep $testpkg
+		testpkg="cmus"
+		check_rpm_dep $testpkg
+	else
+		echo " - DEB Based distribution detected."
+		echo ""
+		testpkg="vim"
+		check_deb_dep $testpkg
+		testpkg="lynx"
+		check_deb_dep $testpkg
+		testpkg="make"
+		check_deb_dep $testpkg
+		testpkg="uuid-runtime"
+		check_deb_dep $testpkg
+		testpkg="cmus"
+		check_deb_dep $testpkg
+	fi
+
+**Plugins Affected** - Since we are adding a new command to Vim so we can open up the CMUS music player while we are authoring our interactive fiction works, we will need to make some edits to the ~/.vim/autoload/inform.vim file.  These edits can be appended to the end of the file.  To add -a functionality to open the CMUS music player add the following lines to the inform.vim file.
+
+.. code-block:: bash
+   :linenos:
+   :emphasize-lines: 1, 2, 3, 4
+
+	function! inform#MUSIC()
+	    :vert term cmus
+	endfunction
+	noremap -a :call inform#MUSIC()<CR>
+
+**Validation** - Now that we have made the changes to Vimform7 to add the desired CMUS functionality, it is time to test them out.  Start out by simply opening a fresh instance of Vimform7 to your favorite or last used project.  Now try the -a command and see what happens.  Note that if you have never used CMUS before you will need to populate it with your local music selection.  Following this `CMUS Tutorial <https://linux.die.net/man/7/cmus-tutorial>`_ should be helpful in getting your music populated into CMUS.  Be sure to give CMUS enough time to populate the music index with the data from your library.  If you have a large collection it can take a little while and CMUS is not very explicit in telling you how much progress it has made with respect to adding your music, so be patient.  Once your music is added to CMUS, try testing again.  Open a fresh instance of Vimform7 and try the new **-a** command you have added.  If everything worked correctly, you should see your music collection in the new vertical pane that was created.  Now that you have verified the new feature works, it is an ideal time to run the vimform7-make-distro.sh script to capture a snapshot of your work.  If you were planning to make a pull request with these changes, the next step in testing would be to install your newly created distribution to be sure that it would work properly for people installing Vimform7 for the first time.  One of the ways to do this is to create a virtual machine for Ubuntu, Fedora, and other operating systems that you can use for this type of final testing.  Virtual machines offer the ability to set restore points making it easy to move back to a pristine installation of the operating system under test.  If you intend to contribute to Vimform7 regularly, it is worth making the time investment to create this kind of testing environment.
+
+This concludes the working example.  Hopefully this has helped to shed light on how Vimform7 works, how to add commands to the Vim interface, how to add new dependencies, and how test and prepare for integrating your changes with the Vimform7 project on github.  Thanks for helping to make Vimform7 better for everyone!
 
 ####################################
 Source Code
@@ -228,8 +314,19 @@ Anyone can contribute to Vimform7.  Any source code, script, or modification to 
 Forking Vimform
 ===============
 
+If you are familiar with Github workflows and terminology you can probably skip this section.  However, if you are new to programming and unfamiliar with Github this section may be helpful to you.  First off, what is Github?  Overall, Github is a service that allows developers to store and collaborate on source code.  It is based on a source code management toolset called "git".  The documentation you are reading now and the source code for Vimform7 are all hosted on Github.  So, what does it mean to "fork" Vimform7?  `Forking <https://guides.github.com/activities/forking/>`_ in Github is a procedure through which you make a copy of a project so you may modify it for your own purposes. 
+
 Issuing A Pull Request
 ======================
+
+Any modifications you make to Vimform7 can be submitted back into the Vimform7 project through a `Pull Request <https://guides.github.com/activities/forking/#making-a-pull-request>`_. Pull requests consist of a few process steps one of which is review of the changes you are making.  To expedite integration of a pull request it is good to do some upfront work such as:
+
+* Test your changes on major Linux operatings systems.  Does your solution work on Ubuntu, Fedora, Linux Mint, Debian, etc?
+* Use your changes for a while before you consider making a pull request if they are adding significant functionality.
+* Comment your code to explain what is being done.
+* Offer a test build of your solution for others to test drive themselves on your own github page.
+
+For minor changes this level of testing would really not be needed, so remember, at the end of the day just use your best judgment regarding how far you really need to go to validate your work.  And most of all, thanks for your help making Vimform7 a better tool for everyone!  
 
 ####################################
 Resources
