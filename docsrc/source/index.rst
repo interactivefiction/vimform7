@@ -340,7 +340,7 @@ Screen Shots
 Desktop Launcher
 ================
 
-**Envoking the desktop VImform7 launcher**
+**Envoking the desktop Vimform7 launcher**
 
 .. image:: imgs/vimform7launcher.png
    :alt: Vimform7 with CMUS music player integrated.
@@ -372,6 +372,8 @@ Vim Commands
 
 .. image:: imgs/vimform7-l.png
    :alt: Vimform7 with integrated debugging window open from using -l.
+
+**Envoking the -d command**
 
 ####################################
 Resources
