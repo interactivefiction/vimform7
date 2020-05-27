@@ -189,7 +189,12 @@ To get started with editing the Vimform7 command line scripts, if you are not fa
 Example Of Adding A Music Player To Vimform7
 ============================================
 
-These following working example is a step-by-step tutorial that provides an introduction to editing the Vimform7 Vim plugins and the Vimform command line scripts. By the end of the example you will have added a new key command to use within Vim that activates a console based music player and will have added that dependency to the vimform installation script.  It is always good to do a bit of planning before starting your work.  Here are some things to consider before you start adding a feature to Vimform7.
+These following working example is a step-by-step tutorial that provides an introduction to editing the Vimform7 Vim plugins and the Vimform command line scripts. By the end of the example you will have added a new key command to use within Vim that activates a console based music player and will have added that dependency to the vimform installation script.  
+
+.. image:: imgs/vimform7-addmusic.png
+   :alt: Vimform7 with CMUS music player integrated.
+
+It is always good to do a bit of planning before starting your work.  Here are some things to consider before you start adding a feature to Vimform7.
 
 * What specifically am I trying to add to Vimform7?  Is it a new vim command?  Is it a change to the command line scripts?  Perhaps both?  What specifically is the change intended to do?
 * What vim plugin files will I need to change (if any) to accomplish my goal?
@@ -327,6 +332,46 @@ Any modifications you make to Vimform7 can be submitted back into the Vimform7 p
 * Offer a test build of your solution for others to test drive themselves on your own github page.
 
 For minor changes this level of testing would really not be needed, so remember, at the end of the day just use your best judgment regarding how far you really need to go to validate your work.  And most of all, thanks for your help making Vimform7 a better tool for everyone!  
+
+####################################
+Screen Shots
+####################################
+
+Desktop Launcher
+================
+
+**Envoking the desktop VImform7 launcher**
+
+.. image:: imgs/vimform7launcher.png
+   :alt: Vimform7 with CMUS music player integrated.
+
+Vim Commands
+============
+
+**Envoking the -7h command**
+
+.. image:: imgs/vimform7-7h.png
+   :alt: Vimform7 with editor and help panes open.
+
+**Envoking the -7p command**
+
+.. image:: imgs/vimform7-7p.png
+   :alt: Vimform7 with editor and player panes open.
+
+**Envoking the -m command**
+
+.. image:: imgs/vimform7-m.png
+   :alt: Vimform7 showing a new compiler output window from using -m.
+
+**Envoking the -t command**
+
+.. image:: imgs/vimform7-t.png
+   :alt: Vimform7 with a new player window from using -t.
+
+**Envoking the -l command**
+
+.. image:: imgs/vimform7-l.png
+   :alt: Vimform7 with integrated debugging window open from using -l.
 
 ####################################
 Resources

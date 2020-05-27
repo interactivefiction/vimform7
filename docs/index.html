@@ -115,8 +115,13 @@
 <li><a class="reference internal" href="#issuing-a-pull-request">Issuing A Pull Request</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#screen-shots">Screen Shots</a><ul>
+<li><a class="reference internal" href="#id2">Desktop Launcher</a></li>
+<li><a class="reference internal" href="#vim-commands">Vim Commands</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#resources">Resources</a><ul>
-<li><a class="reference internal" href="#id2">Resources</a></li>
+<li><a class="reference internal" href="#id3">Resources</a></li>
 <li><a class="reference internal" href="#licensing">Licensing</a></li>
 </ul>
 </li>
@@ -235,7 +240,7 @@
 <div class="section" id="command-line-tools">
 <h2>Command Line Tools</h2>
 <p>Vimform7 provides several command line tools that are used to manage and create Inform7 projects.  When working with existing Inform7 projects the vimform7-port-prj.sh script is helpful in auto-generating a new custom makefile for your project so it may be built using Vimform7 from within Vim or simply by calling make from the commandline in the projects &lt;PROJECTNAME&gt;.inform folder from the commandline.  When working on new projects the vimform7-create-prj.sh is helpful in creating a brand new &lt;PROJECTNAME&gt;.inform7 directory, uuid, and makefile.  Opening an existing project is accomplished by using vimform7-open-prj.sh.</p>
-<table border="1" class="colwidths-given docutils" id="id3">
+<table border="1" class="colwidths-given docutils" id="id4">
 <caption><span class="caption-text">Vimform7 Command Line Tools</span></caption>
 <colgroup>
 <col width="25%" />
@@ -271,7 +276,7 @@
 <div class="section" id="editing-tools">
 <h2>Editing Tools</h2>
 <p>Vimform7 provides tools that are integrated into the Vim environment via Vim plugins.  These tools are envoked using various key combinations.  The following table lists all Vimform7 key combinations that can be used while editing an IF work from within Vim.</p>
-<table border="1" class="colwidths-given docutils" id="id4">
+<table border="1" class="colwidths-given docutils" id="id5">
 <caption><span class="caption-text">Vimform7 Vim Key Combinations</span></caption>
 <colgroup>
 <col width="25%" />
@@ -324,7 +329,7 @@
 <div class="section" id="how-to-edit-vimform7-vim-plugins">
 <h2>How To Edit Vimform7 Vim Plugins</h2>
 <p>To get started with editing the Vimform7 Vim plugins, if you are not familiar with Vim customization, you should take a look at the section <a class="reference external" href="https://vimhelp.org/usr_toc.txt.html#usr_toc.txt">Tuning Vim</a> in the Vim Reference Manual.  <a class="reference external" href="https://vimhelp.org/usr_40.txt.html#usr_40.txt">Making New Commands</a> describes how to add new command key sequences to Vim.  Vimform7 is provided with a number of custom commands to allow for the compilation and debug of Inform7 works.  <a class="reference external" href="https://vimhelp.org/usr_44.txt.html#usr_44.txt">Your Own Syntax Highlighted</a> describes how to implement your own custom syntax highlighter for any language you like (including Inform7).  Vimform7 is provided with a basic syntax highlighter as an example of how to get started.</p>
-<span id="vimform-plugin-files"></span><table border="1" class="colwidths-given docutils" id="id5">
+<span id="vimform-plugin-files"></span><table border="1" class="colwidths-given docutils" id="id6">
 <caption><span class="caption-text">Vimform7 Vim Plugin Files</span></caption>
 <colgroup>
 <col width="25%" />
@@ -351,7 +356,7 @@
 <div class="section" id="how-to-edit-vimform7-scripts">
 <h2>How To Edit Vimform7 Scripts</h2>
 <p>To get started with editing the Vimform7 command line scripts, if you are not familiar with shell scripting, you should take a look at the <a class="reference external" href="https://www.gnu.org/software/bash/manual/bash.html">Bash Reference Manual</a>.  This manual details all commands and concepts used to author the Vimform7 shell scripts.  Vimform7 provides a number of shell scripts that are located in ~/.local/bin and ~/.vimform7/Vimform7.  Those scripts located in ~/.vimform7/Vimform7 are generally only used for installation, uninstallation, and as templates during the process of creating a new distribution.  The scripts located in ~/.local/bin are those scripts that will be most commonly used on a regular basis when interacting with Vimform7.  To make modifications to a script simply open it up in your favorite editor, implement your changes, and the test them by using the script from the command line as you would normally.</p>
-<span id="vimform-script-files"></span><table border="1" class="colwidths-given docutils" id="id6">
+<span id="vimform-script-files"></span><table border="1" class="colwidths-given docutils" id="id7">
 <caption><span class="caption-text">Vimform7 Script Files</span></caption>
 <colgroup>
 <col width="50%" />
@@ -386,7 +391,9 @@
 </div>
 <div class="section" id="example-of-adding-a-music-player-to-vimform7">
 <h2>Example Of Adding A Music Player To Vimform7</h2>
-<p>These following working example is a step-by-step tutorial that provides an introduction to editing the Vimform7 Vim plugins and the Vimform command line scripts. By the end of the example you will have added a new key command to use within Vim that activates a console based music player and will have added that dependency to the vimform installation script.  It is always good to do a bit of planning before starting your work.  Here are some things to consider before you start adding a feature to Vimform7.</p>
+<p>These following working example is a step-by-step tutorial that provides an introduction to editing the Vimform7 Vim plugins and the Vimform command line scripts. By the end of the example you will have added a new key command to use within Vim that activates a console based music player and will have added that dependency to the vimform installation script.</p>
+<img alt="Vimform7 with CMUS music player integrated." src="_images/vimform7-addmusic.png" />
+<p>It is always good to do a bit of planning before starting your work.  Here are some things to consider before you start adding a feature to Vimform7.</p>
 <ul class="simple">
 <li>What specifically am I trying to add to Vimform7?  Is it a new vim command?  Is it a change to the command line scripts?  Perhaps both?  What specifically is the change intended to do?</li>
 <li>What vim plugin files will I need to change (if any) to accomplish my goal?</li>
@@ -396,7 +403,7 @@
 <li>How will I test my changes that I have made?</li>
 </ul>
 <p>Lets start by making a small list that includes our goal, files we plan to edit, and why those particular files should be edited.  This list will serve as a basic roadmap for our work.  Hopefully, the same overall approach can be reused to implement other features you may need to add to Vimform7 as well.  You may find it helpful to refer to <a class="reference internal" href="#vimform-script-files"><span class="std std-ref">Vimform7 Script Files</span></a> and <a class="reference internal" href="#vimform-plugin-files"><span class="std std-ref">Vimform7 Vim Plugin Files</span></a> to determine what files may be important to modify as part of your work.</p>
-<table border="1" class="colwidths-given docutils" id="id7">
+<table border="1" class="colwidths-given docutils" id="id8">
 <caption><span class="caption-text">Plan To Add CMUS to Vimform7</span></caption>
 <colgroup>
 <col width="25%" />
@@ -550,10 +557,31 @@
 <p>For minor changes this level of testing would really not be needed, so remember, at the end of the day just use your best judgment regarding how far you really need to go to validate your work.  And most of all, thanks for your help making Vimform7 a better tool for everyone!</p>
 </div>
 </div>
+<div class="section" id="screen-shots">
+<h1>Screen Shots</h1>
+<div class="section" id="id2">
+<h2>Desktop Launcher</h2>
+<p><strong>Envoking the desktop VImform7 launcher</strong></p>
+<img alt="Vimform7 with CMUS music player integrated." src="_images/vimform7launcher.png" />
+</div>
+<div class="section" id="vim-commands">
+<h2>Vim Commands</h2>
+<p><strong>Envoking the -7h command</strong></p>
+<img alt="Vimform7 with editor and help panes open." src="_images/vimform7-7h.png" />
+<p><strong>Envoking the -7p command</strong></p>
+<img alt="Vimform7 with editor and player panes open." src="_images/vimform7-7p.png" />
+<p><strong>Envoking the -m command</strong></p>
+<img alt="Vimform7 showing a new compiler output window from using -m." src="_images/vimform7-m.png" />
+<p><strong>Envoking the -t command</strong></p>
+<img alt="Vimform7 with a new player window from using -t." src="_images/vimform7-t.png" />
+<p><strong>Envoking the -l command</strong></p>
+<img alt="Vimform7 with integrated debugging window open from using -l." src="_images/vimform7-l.png" />
+</div>
+</div>
 <div class="section" id="resources">
 <h1>Resources</h1>
 <p>The following section provides a number of links and information about Vimform7, Inform7 itself, and the technologies Vimform7 uses.</p>
-<div class="section" id="id2">
+<div class="section" id="id3">
 <h2>Resources</h2>
 <ul class="simple">
 <li><a class="reference external" href="http://inform7.com/">Inform7 - A Design System For Interactive Fiction</a></li>
