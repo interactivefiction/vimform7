@@ -189,7 +189,7 @@ To get started with editing the Vimform7 command line scripts, if you are not fa
 Example Of Adding A Music Player To Vimform7
 ============================================
 
-These following working example is a step-by-step tutorial that provides an introduction to editing the Vimform7 Vim plugins and the Vimform command line scripts. By the end of the example you will have added a new key command to use within Vim that activates a console based music player and will have added that dependency to the vimform installation script.  
+The following working example is a step-by-step tutorial that provides an introduction to editing the Vimform7 Vim plugins and the Vimform command line scripts. By the end of the example you will have added a new key command to use within Vim that activates a console based music player and will have added that dependency to the vimform installation script.  
 
 .. image:: imgs/vimform7-addmusic.png
    :alt: Vimform7 with CMUS music player integrated.
@@ -342,7 +342,7 @@ Desktop Launcher
 
 **Envoking the desktop Vimform7 launcher**
 
-.. image:: imgs/vimform7launcher.png
+.. image:: imgs/vimform7-launcher.png
    :alt: Vimform7 with CMUS music player integrated.
 
 Vim Commands
