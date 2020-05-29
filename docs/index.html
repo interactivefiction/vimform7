@@ -121,7 +121,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#resources">Resources</a><ul>
-<li><a class="reference internal" href="#id3">Resources</a></li>
+<li><a class="reference internal" href="#links-information">Links &amp; Information</a></li>
 <li><a class="reference internal" href="#licensing">Licensing</a></li>
 </ul>
 </li>
@@ -240,7 +240,7 @@
 <div class="section" id="command-line-tools">
 <h2>Command Line Tools</h2>
 <p>Vimform7 provides several command line tools that are used to manage and create Inform7 projects.  When working with existing Inform7 projects the vimform7-port-prj.sh script is helpful in auto-generating a new custom makefile for your project so it may be built using Vimform7 from within Vim or simply by calling make from the commandline in the projects &lt;PROJECTNAME&gt;.inform folder from the commandline.  When working on new projects the vimform7-create-prj.sh is helpful in creating a brand new &lt;PROJECTNAME&gt;.inform7 directory, uuid, and makefile.  Opening an existing project is accomplished by using vimform7-open-prj.sh.</p>
-<table border="1" class="colwidths-given docutils" id="id4">
+<table border="1" class="colwidths-given docutils" id="id3">
 <caption><span class="caption-text">Vimform7 Command Line Tools</span></caption>
 <colgroup>
 <col width="25%" />
@@ -276,7 +276,7 @@
 <div class="section" id="editing-tools">
 <h2>Editing Tools</h2>
 <p>Vimform7 provides tools that are integrated into the Vim environment via Vim plugins.  These tools are envoked using various key combinations.  The following table lists all Vimform7 key combinations that can be used while editing an IF work from within Vim.</p>
-<table border="1" class="colwidths-given docutils" id="id5">
+<table border="1" class="colwidths-given docutils" id="id4">
 <caption><span class="caption-text">Vimform7 Vim Key Combinations</span></caption>
 <colgroup>
 <col width="25%" />
@@ -329,7 +329,7 @@
 <div class="section" id="how-to-edit-vimform7-vim-plugins">
 <h2>How To Edit Vimform7 Vim Plugins</h2>
 <p>To get started with editing the Vimform7 Vim plugins, if you are not familiar with Vim customization, you should take a look at the section <a class="reference external" href="https://vimhelp.org/usr_toc.txt.html#usr_toc.txt">Tuning Vim</a> in the Vim Reference Manual.  <a class="reference external" href="https://vimhelp.org/usr_40.txt.html#usr_40.txt">Making New Commands</a> describes how to add new command key sequences to Vim.  Vimform7 is provided with a number of custom commands to allow for the compilation and debug of Inform7 works.  <a class="reference external" href="https://vimhelp.org/usr_44.txt.html#usr_44.txt">Your Own Syntax Highlighted</a> describes how to implement your own custom syntax highlighter for any language you like (including Inform7).  Vimform7 is provided with a basic syntax highlighter as an example of how to get started.</p>
-<span id="vimform-plugin-files"></span><table border="1" class="colwidths-given docutils" id="id6">
+<span id="vimform-plugin-files"></span><table border="1" class="colwidths-given docutils" id="id5">
 <caption><span class="caption-text">Vimform7 Vim Plugin Files</span></caption>
 <colgroup>
 <col width="25%" />
@@ -356,7 +356,7 @@
 <div class="section" id="how-to-edit-vimform7-scripts">
 <h2>How To Edit Vimform7 Scripts</h2>
 <p>To get started with editing the Vimform7 command line scripts, if you are not familiar with shell scripting, you should take a look at the <a class="reference external" href="https://www.gnu.org/software/bash/manual/bash.html">Bash Reference Manual</a>.  This manual details all commands and concepts used to author the Vimform7 shell scripts.  Vimform7 provides a number of shell scripts that are located in ~/.local/bin and ~/.vimform7/Vimform7.  Those scripts located in ~/.vimform7/Vimform7 are generally only used for installation, uninstallation, and as templates during the process of creating a new distribution.  The scripts located in ~/.local/bin are those scripts that will be most commonly used on a regular basis when interacting with Vimform7.  To make modifications to a script simply open it up in your favorite editor, implement your changes, and the test them by using the script from the command line as you would normally.</p>
-<span id="vimform-script-files"></span><table border="1" class="colwidths-given docutils" id="id7">
+<span id="vimform-script-files"></span><table border="1" class="colwidths-given docutils" id="id6">
 <caption><span class="caption-text">Vimform7 Script Files</span></caption>
 <colgroup>
 <col width="50%" />
@@ -403,7 +403,7 @@
 <li>How will I test my changes that I have made?</li>
 </ul>
 <p>Lets start by making a small list that includes our goal, files we plan to edit, and why those particular files should be edited.  This list will serve as a basic roadmap for our work.  Hopefully, the same overall approach can be reused to implement other features you may need to add to Vimform7 as well.  You may find it helpful to refer to <a class="reference internal" href="#vimform-script-files"><span class="std std-ref">Vimform7 Script Files</span></a> and <a class="reference internal" href="#vimform-plugin-files"><span class="std std-ref">Vimform7 Vim Plugin Files</span></a> to determine what files may be important to modify as part of your work.</p>
-<table border="1" class="colwidths-given docutils" id="id8">
+<table border="1" class="colwidths-given docutils" id="id7">
 <caption><span class="caption-text">Plan To Add CMUS to Vimform7</span></caption>
 <colgroup>
 <col width="25%" />
@@ -585,9 +585,10 @@
 <div class="section" id="resources">
 <h1>Resources</h1>
 <p>The following section provides a number of links and information about Vimform7, Inform7 itself, and the technologies Vimform7 uses.</p>
-<div class="section" id="id3">
-<h2>Resources</h2>
+<div class="section" id="links-information">
+<h2>Links &amp; Information</h2>
 <ul class="simple">
+<li><a class="reference external" href="_static/help/play.html">Vimform7 Interactive Help</a></li>
 <li><a class="reference external" href="http://inform7.com/">Inform7 - A Design System For Interactive Fiction</a></li>
 <li><a class="reference external" href="https://github.com/ptomato/gnome-inform7">gnome-inform7 - An Interactive Fiction IDE for Inform7</a></li>
 <li><a class="reference external" href="https://www.vim.org/">Vim - A Highly Configurable Text Editor</a></li>
