@@ -393,6 +393,7 @@ Links & Information
 =====================
 
 * `Vimform7 Interactive Help <_static/help/play.html>`_
+* `Vimform7 Installation Video Walkthrough <https://www.youtube.com/watch?v=s_X2rxBICgI>`_
 * `Inform7 - A Design System For Interactive Fiction <http://inform7.com/>`_
 * `gnome-inform7 - An Interactive Fiction IDE for Inform7 <https://github.com/ptomato/gnome-inform7>`_
 * `Vim - A Highly Configurable Text Editor <https://www.vim.org/>`_
