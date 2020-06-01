@@ -389,6 +389,11 @@ Resources
 
 The following section provides a number of links and information about Vimform7, Inform7 itself, and the technologies Vimform7 uses.
 
+Report An Issue
+==================
+
+If you run into problems using Vimform or just have a feature request or suggested improvement, consider filing an issue on the `Vimform7 github <https://github.com/interactivefiction/vimform7/issues>`_.  If needed you can contact Vimform7 directly via email at: vimform7@gmail.com as well.  Thank you for helping to make Vimform7 better for everyone!
+
 Links & Information
 =====================
 
