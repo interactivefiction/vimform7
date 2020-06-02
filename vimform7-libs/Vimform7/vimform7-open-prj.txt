@@ -1,0 +1,32 @@
+VIMFORM7 1.0 - Vim environment to edit and compile Inform7 projects.
+
+The vimform7-open-prj.sh script allows users to open an existing Inform7
+project within the VIM editor and also prepares the editor for working
+with Inform7 projects.  It loads up the most recently edited file in an
+Inform7 project, Inform7 syntax help, and a interactive fiction player if
+desired that uses the latest build of the project.
+
+Dependencies:
+
+    vim		Editor (dnf install vim / apt-get install vim)
+    lynx	Web Viewer (dnf install lynx / apt-get install lynx)
+    make	Build Tool (dnf install make / apt-get install make)
+
+Usage for vimform7-open-prj.sh:
+
+    Show this help	./vimform7-open-prj.sh -h
+    New Gluxe Project	./vimform7-open-prj.sh -f=<PROJECT FOLDER>
+    Open With Player	./vimform7-open-prj.sh -f=<PROJECT FOLDER> -p
+    Open With Help	./vimform7-open-prj.sh -f=<PROJECT FOLDER> -7h
+
+Arguments:
+    -h			Show help information.
+    -f			Path to project folder to open.
+    -p			Open VIM with an additional if player pane.
+    -7h			Open VIM with an additional Inform7 help pane.
+
+Examples:
+    ./vimform7-open-prj.sh -f=~/Documents/Projects/project1
+    ./vimform7-open-prj.sh -f="~/Documents/Projects/project 1"
+    ./vimform7-open-prj.sh -f=~/Documents/Projects/project1 -p -7h
+    ./vimform7-open-prj.sh -f="~/Documents/Projects/project 1" -p -7h

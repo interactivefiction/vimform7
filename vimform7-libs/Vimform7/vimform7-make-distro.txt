@@ -1,0 +1,26 @@
+VIMFORM7 1.0 - Vim environment to edit and compile Inform7 projects.
+
+The vimform7-make-distro.sh script allows users to create Vimform7
+distributions from an existing custom configuration.  Running this
+script collects all Vimform7 materials from the current system
+installation and packages them for reinstallation on another system.
+This is helpful for creating a new unique distribution based on
+your own custom modifications made to the Vimform7 scripts and plugins.
+
+Dependencies:
+
+    None.
+		
+Usage for vimform7-make-distro.sh:
+
+    Show this help	./vimform7-make-distro.sh -h
+    Make named distro	./vimform7-make-distro.sh -n=<NAME>
+ 
+Arguments:
+    -h			Show help information.
+    -n			Name of project to create.
+
+Examples:
+    ./vimform7-make-distro.sh -n=project1
+    ./vimform7-make-distro.sh -n="project1"
+    ./vimform7-make-distro.sh -n="project 1"	

@@ -1,0 +1,30 @@
+VIMFORM7 1.0 - Vim environment to edit and compile Inform7 projects.
+
+The vimform-port-prj.sh script allows users to port existing projects
+originally created with gnome-inform7 to the vimform7 environment.  The
+changes made to existing projects will allow them to be used with both
+gnome-inform7 and vimform7.  In general, the vimform-port-prj.sh script
+simply creates a custom makefile in the project folder of the original
+gnome-inform7 project.
+
+Dependencies:
+
+    make        Build Tool (dnf install make / apt-get install make)
+
+Usage for vimform7-port-prj.sh:
+
+    Show this help      ./vimform7-port-prj.sh -h
+    Port Project	./vimform7-open-prj.sh -f=<PROJECT FOLDER>
+    Port To Z8 Project  ./vimform7-open-prj.sh -f=<PROJ FOLDER> -t=z8
+    Port To ULX Project  ./vimform7-open-prj.sh -f=<PROJ FOLDER> -t=glulx
+
+Arguments:
+    -h                  Show help information.
+    -f                  Path to project folder to port.
+    -t			Type of project to port to (z8/glulx)
+
+Examples:
+    ./vimform7-port-prj.sh -f=~/Documents/Projects/project1
+    ./vimform7-port-prj.sh -f="~/Documents/Projects/project 1"
+    ./vimform7-port-prj.sh -f=~/Documents/Projects/project1 -t=z8
+    ./vimform7-port-prj.sh -f="~/Documents/Projects/project 1" -t=z8

@@ -1,0 +1,38 @@
+VIMFORM7 1.0 - Vim environment to edit and compile Inform7 projects.
+
+The vimform7-create-prj.sh script allows users to create Inform7 projects
+from the commandline.  The projects created are compatible with 
+gnome-inform7 but also include additional materials that allow for the 
+development of Inform7 titles from entirely within the VIM (VI Improved) 
+editor.  When viminform7-create-prj.sh is executed it performs several 
+tasks: 1) Creates the required Inform7 project structure, 2) Creates a 
+UUID for the new project, 3) Creates a custom makefile that can be used 
+from either the commandline via make or from within VIM or GVIM as well.
+
+Dependencies:
+
+    vim		Editor (dnf install vim / apt-get install vim)
+    lynx	Web Viewer (dnf install lynx / apt-get install lynx)
+    make	Build Tool (dnf install make / apt-get install make)
+    uuidgen	UUID Tool (dnf install util-linux / apt-get install 
+                           uuid-tuntime)
+		
+
+Usage for vimform7-create-project.sh:
+
+    Show this help	./vimform7-create-prj.sh -h
+    New Gluxe Project	./vimform7-create-prj.sh -n=<NAME>
+    New Project w/Fmt	./vimform7-create-prj.sh -n=<NAME> -f=<FMT>
+ 
+Arguments:
+    -h			Show help information.
+    -n			Name of project to create.
+    -f			Format of project to create (z8 or glulx)
+
+Examples:
+    ./vimform7-create-prj.sh -n=project1
+    ./vimform7-create-prj.sh -n="project1"
+    ./vimform7-create-prj.sh -n="project 1"
+    ./vimform7-create-prj.sh -n=project2 -f=z8
+    ./vimform7-create-prj.sh -n="project2" -f=z8
+    ./vimform7-create-prj.sh -n="project 2" -f=z8	

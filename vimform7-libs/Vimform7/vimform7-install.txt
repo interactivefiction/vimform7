@@ -1,0 +1,34 @@
+VIMFORM7 1.0 - Vim environment to edit and compile Inform7 projects.
+
+The vimform7-install.sh script installs the vimform7 toolset, inform7 
+compilers, inform7 interpreters, inform7 help documents, and default 
+extensions.  This script should be run as a normal user.  The script will
+ask for sudo permission as needed during the installation.  The bulk of
+the installation copies data to ~/.vimform7/.  Only several scripts are
+copied into ~/.local/bin in order to ensure that they are visible
+system wide.  Sudo operations are required to install vimform7 
+dependencies such as vim, lynx, make, and uuidgen.  To remove vimform7 
+from your system simply run vimform7-uninstall.sh and all installed 
+files will be deleted.
+
+Dependencies:
+
+    vim         Editor (dnf install vim / apt-get install vim)
+    lynx        Web Viewer (dnf install lynx / apt-get install lynx)
+    make        Build Tool (dnf install make / apt-get install make)
+    uuidgen     UUID Tool (dnf install util-linux / apt-get install
+                           uuid-tuntime)
+
+Usage for vimform7-install.sh:
+
+    Show this help	./vimform7-install.sh -h
+    Default install	./vimform7-install.sh
+    Custom install      ./vimform7-install.sh -d=<PATH TO INSTALL>
+
+Arguments:
+    -h			Show help information.
+    -d			Destination path fo custom installation.
+
+Examples:
+    ./vimform7-install.sh
+    ./vimform7-install.sh -d="~/Documents/Custompath/"
