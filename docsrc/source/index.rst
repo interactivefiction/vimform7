@@ -29,6 +29,20 @@ Vimform7 provides the essential capabilities needed to author an interactive fic
 * Add your own custom short cuts and commands to aid in your development efforts.
 * Package your customizations as a new Vimform7 distribution to give to others or to replicate your custom environment on a new system.
 
+Operating System Support
+===========================
+
+The latest Vimform7 archive Vimform7-06-02-2020-083146.tar.xz has been installed and tested on the following operating systems:
+
+* Ubuntu 18.04
+* Ubuntu 19.10
+* Ubuntu 20.04
+* Fedora 29
+* Fedora 30
+* Fedora 31
+
+Ubuntu 16.04 users: Please note that Vimform7 requires Vim 8.x for the best experience but it will also run with older version of Vim in a limited fashion.  Ubuntu 16.04 does not *officialy* have Vim 8.x as part of the standard package repository; however, if you are running Ubuntu 16.04 and wish to use Vimform7 fully, you can install Vim 8.x by following the instructions `here. <http://ubuntuhandbook.org/index.php/2019/12/install-vim-8-2-ubuntu-18-04-16-04-19-10/>`_  Once you have Vim8.x setup you can follow the normal installation procedure for Vimform7.
+
 ####################################
 Usage
 ####################################
@@ -41,23 +55,35 @@ Installation & Removal
 Vimform7 distributions are provided as compressed archives available on the Vimform7 github builds page.  Installation requires the archive to be decompressed to a temporary location and then an installation script is run to perform the necessary setup steps.  Similar to installation, uninstallation is performed by executing a script as well. Some key aspects of the Vimform7 installation are as follows:
 
 * Vimform7 will not conflict with existing gnome-inform7 or other IF compilers that are installed on your system.  For example, gnome-inform7 and Vimform7 can coexist on the same system with no issues.
-* Vimform7 will install OS packages for vim, lynx, make, and uuidgen.  If your OS does not provide these packages Vimform7 will not install.
+* Vimform7 will install OS packages for vim, lynx, make, and uuidgen.  If your OS does not provide these packages Vimform7 will not install.  Note: Administrator permission is required to install these dependencies using your operating systems package manager.
 * Vimform7 itself is built entirely on shell scripts and vim scripting languages.  All scripts / plugins are installed within your home folder structure.
 
 Downloading An Archive
 ======================
 
-All official Vimform7 archives are available at the vimform7-builds github.  You can either clone the git repository or simply download a snapshot of the repository in zip format.
+All official Vimform7 archives are available at the `vimform7-builds <https://github.com/interactivefiction/vimform7-builds>`_ github. You can either clone the git repository or simply download a snapshot of the repository in zip format.  
+
+`Here is a direct link to download a zip archive containing all of the latest Vimform7 distributions <https://github.com/interactivefiction/vimform7-builds/archive/master.zip>`_
 
 Installation Process
 ====================
 
 Vimform7 takes a few steps to install.  First you need to download an archive, second the archive must be extracted, and third a script must be run to perform the installation.
 
+#. `Download Vimform7 Archive <https://github.com/interactivefiction/vimform7-builds/archive/master.zip>`_
+#. Extract the archive.  For example: right click the archive and select 'Extract Here'.
+#. Open a command line in the extracted Vimform7 archive folder.  For example: open the folder and then right click in the folder area (not on an icon) and select 'Open In Terminal'.
+#. Run the command ./vimform7-install.sh
+#. Supply your administrator password as needed to allow the operating system package manager to resolve missing dependencies.
+
 Removal Process
 ===============
 
 You can remove Vimform7 from your system by running the vimform7-uninstall.sh script.  This script can be found in two places: 1) The root of the original archive that Vimform7 was installed from, 2) In the ~/.vimform7/Vimform7 folder on the system where Vimform7 was installed.
+
+#. Locate the vimform7-uninstall.sh script.
+#. Open a command line in the folder where the script is located.  For example: open the folder and then right click in the folder area (not on an icon) and select 'Open In Terminal'.
+#. Run the command ./vimform7-uninstall.sh
 
 Desktop Launcher
 ================
