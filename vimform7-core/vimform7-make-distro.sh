@@ -94,12 +94,7 @@ cp $HOME/.vim/autoload/inform.vim ./.vim/autoload
 cp $HOME/.vim/syntax/inform7.vim ./.vim/syntax
 cp $HOME/.vim/ftdetect/inform7.vim ./.vim/ftdetect
 mkdir -p ./.local/bin
-cp $HOME/.local/bin/vimform7-common.sh ./.local/bin
-cp $HOME/.local/bin/vimform7-compile-filter.sh ./.local/bin
-cp $HOME/.local/bin/vimform7-create-prj.sh ./.local/bin
-cp $HOME/.local/bin/vimform7-open-prj.sh ./.local/bin
-cp $HOME/.local/bin/vimform7-port-prj.sh ./.local/bin
-cp $HOME/.local/bin/vimform7-make-distro.sh ./.local/bin
+cp $HOME/.local/bin/vimform7-* ./.local/bin
 cp ./.vimform7/Vimform7/vimform7-install.sh ./
 cp ./.vimform7/Vimform7/vimform7-install.txt ./
 cp ./.vimform7/Vimform7/vimform7-uninstall.sh ./

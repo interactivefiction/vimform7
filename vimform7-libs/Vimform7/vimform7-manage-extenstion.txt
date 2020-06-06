@@ -1,0 +1,24 @@
+VIMFORM7 1.0 - Vim environment to edit and compile Inform7 projects.
+
+The vimform7-manage-extenstion.sh script allows users to add new Inform
+extensions to their interactive fiction development environment.  This
+script is mainly a helper script that simply copies the desired
+extension into the correct directory structure so that the Inform7
+compiler can find the extensions when compiling an IF work.
+
+Dependencies:
+
+    none
+
+Usage for vimform7-port-prj.sh:
+
+    Show this help      ./vimform7-manage-extenstion.sh -h
+    Install Extension	./vimform7-manage-extenstion.sh -e=<EXT.i7x>
+
+Arguments:
+    -h                  Show help information.
+    -e                  Path and name of extension to install.
+
+Examples:
+    ./vimform7-manage-extenstion.sh -e="./extension name.i7x"
+    ./vimform7-manage-extenstion.sh -e=./extensionname.i7x
