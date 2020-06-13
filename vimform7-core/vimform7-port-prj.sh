@@ -37,7 +37,7 @@ function handle_parameter_data()
 		echo "     - Project name is: $B"
 		PRJNAME=$B
 		M="makefile"
-		PRJMAKE="$data$M"
+		PRJMAKE="$data/$M"
 		echo "     - Project make path: $PRJMAKE"
 		MODE="PORTPRJ"
 		;;
@@ -47,14 +47,14 @@ function handle_parameter_data()
 	h)	echo "     - Show vimform7-port-prj.sh help information."
                 echo ""
                 cat $HELPFILE
-                exit		
+                exit
 		;;
 	*)	echo "     - Invalid argument given.  Script exiting."
 		echo "     - View help using ./vimform7-port-prj.sh -h"
        		exit
 		;;
 	esac
-		
+
 }
 clear
 echo "VIMFORM - vimform7-port-prj 1.0 (2020 May 10)"
