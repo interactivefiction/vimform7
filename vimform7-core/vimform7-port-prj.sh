@@ -37,7 +37,7 @@ function handle_parameter_data()
 		echo "     - Project name is: $B"
 		PRJNAME=$B
 		M="makefile"
-		PRJMAKE="$data$M"
+		PRJMAKE="$data/$M"
 		echo "     - Project make path: $PRJMAKE"
 		MODE="PORTPRJ"
 		;;
@@ -47,14 +47,14 @@ function handle_parameter_data()
 	h)	echo "     - Show vimform7-port-prj.sh help information."
                 echo ""
                 cat $HELPFILE
-                exit		
+                exit
 		;;
 	*)	echo "     - Invalid argument given.  Script exiting."
 		echo "     - View help using ./vimform7-port-prj.sh -h"
        		exit
 		;;
 	esac
-		
+
 }
 clear
 echo "VIMFORM - vimform7-port-prj 1.0 (2020 May 10)"
@@ -80,18 +80,18 @@ if (([ "$#" -gt 2 ])||([ "$#" -lt 1 ])); then
 fi
 echo " - Parsing arguments..."
 echo ""
-for var in $@
+for var in "$@"
 do
 	echo "   - Processing argument $ARGCOUNTER: $var"
-	paramval=$(parse_argument_param $var)
-	dataval=$(parse_argument_data $var)
+	paramval="$(parse_argument_param $var)"
+	dataval=$(cut -d'=' -f2- <<<"$var")
 	echo "     - Parameter $paramval found..."
-	if [ $dataval != $var ]; then
+	if [ "$dataval" != "$var" ]; then
 		echo "     - Data for parameter is: $dataval"
 	else
 		echo "     - No data found."
 	fi
-	handle_parameter_data $paramval $dataval
+	handle_parameter_data "$paramval" "$dataval"
 done
 echo ""
 echo " - Parsing complete.  Script mode is $MODE"
@@ -171,7 +171,7 @@ echo "     - Attempting to build $PRJNAME.inform from makefile..."
 echo ""
 echo ""
 CURRENTPWD=$PWD
-cd $VIMFORM7PROJECTFOLDER
+cd "$VIMFORM7PROJECTFOLDER"
 make
 cd $CURRENTPWD
 echo ""
