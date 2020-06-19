@@ -27,14 +27,14 @@ function handle_parameter_data()
 	h)	echo "     - Show vimform7-make-distro.sh help information."
                 echo ""
                 cat $HELPFILE
-                exit		
+                exit
 		;;
 	*)	echo "     - Invalid argument given.  Script exiting."
 		echo "     - View help using ./vimform7-port-prj.sh -h"
        		exit
 		;;
 	esac
-		
+
 }
 clear
 echo "VIMFORM - vimform7-make-distro 1.0 (2020 May 10)"
@@ -60,18 +60,18 @@ if ([ "$#" -gt 1 ]); then
 fi
 echo " - Parsing arguments..."
 echo ""
-for var in $@
+for var in "$@"
 do
 	echo "   - Processing argument $ARGCOUNTER: $var"
-	paramval=$(parse_argument_param $var)
-	dataval=$(parse_argument_data $var)
+	paramval="$(parse_argument_param $var)"
+	dataval=$(cut -d'=' -f2- <<<"$var")
 	echo "     - Parameter $paramval found..."
-	if [ $dataval != $var ]; then
+	if [ "$dataval" != "$var" ]; then
 		echo "     - Data for parameter is: $dataval"
 	else
 		echo "     - No data found."
 	fi
-	handle_parameter_data $paramval $dataval
+	handle_parameter_data "$paramval" "$dataval"
 done
 echo ""
 echo " - Parsing complete.  Script mode is $MODE"
@@ -83,8 +83,8 @@ if [ "$MODE" == "HELP" ]; then
         cat $HELPFILE
         exit
 fi
-mkdir $VIMFORM7TARGETDISTRODIR$VIMFORM7TARGETDISTRONAME
-cd $VIMFORM7TARGETDISTRODIR$VIMFORM7TARGETDISTRONAME
+mkdir "$VIMFORM7TARGETDISTRODIR$VIMFORM7TARGETDISTRONAME"
+cd "$VIMFORM7TARGETDISTRODIR$VIMFORM7TARGETDISTRONAME"
 mkdir -p ./.vim/autoload
 mkdir -p ./.vim/syntax
 mkdir -p ./.vim/ftdetect
@@ -113,4 +113,4 @@ tar -cJf "$VIMFORM7TARGETDISTRONAME.tar.xz" -C "./$VIMFORM7TARGETDISTRONAME" .
 cd ..
 mv "./PACKAGE/$VIMFORM7TARGETDISTRONAME.tar.xz" ./
 rm -rfv ./PACKAGE
-rm -rfv $VIMFORM7TARGETDISTRODIR$VIMFORM7TARGETDISTRONAME
+rm -rfv "$VIMFORM7TARGETDISTRODIR$VIMFORM7TARGETDISTRONAME"
