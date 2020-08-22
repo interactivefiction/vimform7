@@ -62,6 +62,7 @@ function handle_parameter_data()
 		;;
 	g)	echo "     - Selecting GVIM instead of VIM."
 		VIMFORMVIM="gvim"
+		MODE="OPENPRJ"
 		;;
 	*)	echo "     - Invalid argument given.  Script exiting."
 		echo "     - View help using ./vimform7-open-prj.sh -h"
@@ -81,6 +82,7 @@ if [ "$#" -eq 0 ]; then
 	VIMFORM7PROJECTFOLDER=$VIMFORM7LASTOPENED
 	exit_script
 fi
+VIMFORM7PROJECTFOLDER=$VIMFORM7LASTOPENED
 if [ "$#" -ge 1 ]; then
         echo "   - First argument: $1"
         if [ "$#" -ge 2 ]; then
