@@ -84,6 +84,16 @@ if [ "$MODE" == "HELP" ]; then
         exit
 fi
 mkdir "$VIMFORM7TARGETDISTRODIR$VIMFORM7TARGETDISTRONAME"
+if [ -d "$VIMFORM7TARGETDISTRODIR$VIMFORM7TARGETDISTRONAME" ]; then
+	echo ""
+	echo " - Directory was created: $VIMFORM7TARGETDISTRODIR$VIMFORM7TARGETDISTRONAME"
+	echo ""
+else
+        echo ""
+        echo " - ERROR: Directory could NOT be created."
+        echo ""
+	exit
+fi
 cd "$VIMFORM7TARGETDISTRODIR$VIMFORM7TARGETDISTRONAME"
 mkdir -p ./.vim/autoload
 mkdir -p ./.vim/syntax
